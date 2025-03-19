@@ -93,7 +93,7 @@
   </div>
   <footer class="container mx-auto p-4 pt-10 text-center text-xs">
     <p>All images, graphics, textual and game contents &copy; 2015-{{ thisYear }} Plaid Hat Games. All rights reserved.</p>
-    <p>Web developer? Contribute to the <a href="https://github.com/onecrayon/ashes.live" rel="external" target="_blank">Javascript app</a> or <a href="https://github.com/onecrayon/api.ashes.live" rel="external" target="_blank">Python API</a> on GitHub!</p>
+    <p>Forked from <a href="https://github.com/onecrayon/ashes.live" rel="external" target="_blank">ashes.live</a> and <a href="https://github.com/onecrayon/api.ashes.live" rel="external" target="_blank">api.ashes.live</a>.</p>
   </footer>
 </template>
 

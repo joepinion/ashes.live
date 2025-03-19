@@ -4,8 +4,6 @@
 
     <p class="text-lg">
       Sorry, this does not appear to be a valid card!
-      <router-link v-if="showLegacy" :to="{name: 'CardDetails', params: { stub: stub }}">Try the Ashes Reborn version.</router-link>
-      <router-link v-else :to="{name: 'CardDetailsLegacy', params: { stub: stub }}">Try the Legacy version.</router-link>
     </p>
   </div>
   <div v-else-if="!card">
@@ -91,8 +89,6 @@
             </div>
           </div>
         </section>
-        <hr class="my-4 border-gray-light lg:hidden">
-        <comments :entity-id="entity_id" :last-seen-entity-id="last_seen_entity_id" />
       </div>
       <div class="lg:w-1/3 lg:pl-8">
         <hr class="my-4 border-gray-light lg:hidden">
@@ -130,10 +126,6 @@
             <card-related-cards v-if="phoenixbornUnique" :card="card" :summons="phoenixbornUnique" :conjurations="phoenixbornUniqueConjurations" :show-legacy="showLegacy"></card-related-cards>
           </ul>
         </div>
-        <button v-if="isAuthenticated" class="btn py-1 mb-8 w-full" :class="{'btn-blue': !last_seen_entity_id}" @click="toggleSubscription()">
-          <i class="fa-bookmark" :class="{'far': last_seen_entity_id, 'fas': !last_seen_entity_id}"></i>
-          <span v-if="last_seen_entity_id"> Unsubscribe</span><span v-else> Subscribe</span>
-        </button>
         <card-usage :stub="stub"></card-usage>
       </div>
     </div>

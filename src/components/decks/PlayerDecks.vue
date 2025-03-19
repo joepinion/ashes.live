@@ -23,14 +23,6 @@
           Red Rains
         </router-link>
       </li>
-      <li class="flex-auto">
-        <router-link
-          :to="{name: 'LegacyPlayerDecks'}"
-          class="phg-exhaust block mb-2 sm:mb-0 btn sm:btn-last hover:no-underline text-black"
-          :class="{'active cursor-text': showLegacy}">
-          Legacy
-        </router-link>
-      </li>
     </ul>
   </nav>
 

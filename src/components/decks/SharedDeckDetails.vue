@@ -8,7 +8,6 @@
       <div class="mb-4 lg:pl-8 lg:w-1/3 lg:order-2">
         <p class="border-2 border-orange rounded bg-inexhaustible px-4 py-2 mb-8">
           <strong class="text-lg">This deck has been shared with you by <player-badge :user="deck.user"></player-badge>.</strong> <span v-if="!deck.is_public">Please do not post this link publicly.</span>
-          You can use this link to import the deck into <a href="https://ashteki.com">Ashteki</a> or the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2386753960">Ashes Reborn Tabletop Simulator mod</a>.
         </p>
 
         <button v-if="isAuthenticated" class="btn py-1 w-full" @click="copyAndEdit" :disabled="isTalkingToServer">

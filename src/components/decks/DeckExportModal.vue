@@ -7,9 +7,6 @@
         <p v-if="!deck.is_snapshot" class="border-2 border-orange rounded bg-inexhaustible px-4 py-2 mb-2">
           <strong>Warning:</strong> anyone with this link can see the most recent saved copy of your deck!
         </p>
-        <p v-else class="mb-2">
-          Use this link to <span v-if="!deck.is_public">privately share your deck or</span> import in Ashteki or Tabletop Simulator.
-        </p>
         <input-button
           v-model="shareURL"
           button-title="Copy"
@@ -34,9 +31,6 @@
         </div>
         <div>
           <toggle v-model="sortByType"><span class="ml-2 text-sm">Sort by type</span></toggle>
-        </div>
-        <div>
-          <toggle v-model="showAttribution"><span class="ml-2 text-sm">Attribution</span></toggle>
         </div>
       </div>
     </div>
@@ -167,9 +161,6 @@ export default {
             text.push('\n')
           }
         }
-      }
-      if (this.showAttribution) {
-        text.push('Created with https://ashes.live')
       }
       return text.join('').trim()
     },

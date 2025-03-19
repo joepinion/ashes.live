@@ -41,18 +41,6 @@
           <span class="text-gray-darker">Updated:</span>
           <span>{{ lastUpdatedDateFormatted }} ago</span>
 
-          <span class="text-gray-darker">Requires:</span>
-          <span>
-            <span v-for="(release, index) of releases" :key="release.stub">
-              <span v-if="index != 0">, </span>
-              <router-link v-if="release.preconstructed_deck_id" :to="{name: 'DeckDetails', params: {id: release.preconstructed_deck_id}}">
-                {{ release.name }}
-              </router-link>
-              <span v-else>
-                {{ release.name }}
-              </span>
-            </span>
-          </span>
         </div>
 
         <button :disabled="disableBuy()" @click="showBuyDeck = true" class="btn py-1 w-full mb-4">
@@ -96,10 +84,6 @@
           <i class="fas fa-copy"></i>
           Clone as <span v-if="deck.is_red_rains">PvP</span><span v-else>PvE</span>
         </button>
-        <button v-if="isAuthenticated && !deck.is_legacy" class="btn py-1 mt-8 w-full" :class="{'btn-blue': !last_seen_entity_id}" @click="toggleSubscription()" :disabled="isTalkingToServer">
-          <i class="fa-bookmark" :class="{'far': last_seen_entity_id, 'fas': !last_seen_entity_id}"></i>
-          <span v-if="last_seen_entity_id"> Unsubscribe</span><span v-else> Subscribe</span>
-        </button>
       </div>
       <div
         class="lg:w-2/3 lg:order-1 flex">
@@ -141,7 +125,6 @@
 
       <card-codes :content="deck.description" :is-legacy="deck.is_legacy" needs-paragraphs></card-codes>
     </div>
-    <comments v-if="deck.is_public && deck.comments_entity_id" :entity-id="deck.comments_entity_id" :last-seen-entity-id="last_seen_entity_id" />
   </div>
 </template>
 
