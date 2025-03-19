@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import Toast from 'vue-toastification'
 import router from './router.js'
 import store from './store/index.js'
+import products from './products.js'
 import App from './App.vue'
 import CardLink from '/src/components/global/CardLink.vue'
 // And import styles
@@ -40,6 +41,7 @@ app.component('card-link', CardLink)
 // Setup plug-ins
 app.use(router)
 app.use(store)
+app.use(products);
 app.use(Toast, toastOptions)
 // And finally mount up and get running!
 app.mount('#app')

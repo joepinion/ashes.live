@@ -55,6 +55,13 @@
           </span>
         </div>
 
+        <button :disabled="disableBuy()" @click="showBuyDeck = true" class="btn py-1 w-full mb-4">
+          <i class="fas fa-cart-plus"></i>
+          Buy this Deck
+        </button>
+        <buy-deck-modal v-model:open="showBuyDeck" :deck="deck"></buy-deck-modal>
+
+
         <button class="btn py-1 w-full mb-4" @click="showTextExport = true">
           <i class="fas fa-share-square"></i>
           Share...
@@ -150,6 +157,7 @@ import DeckExportModal from './DeckExportModal.vue'
 import DeckEditButtons from '../shared/DeckEditButtons.vue'
 import CardCodes from '../shared/CardCodes.vue'
 import PlayerBadge from '../shared/PlayerBadge.vue'
+import BuyDeckModal from './BuyDeckModal.vue'
 
 export default {
   name: 'DeckDetails',
@@ -166,6 +174,7 @@ export default {
     DeckEditButtons,
     DeckExportModal,
     PlayerBadge,
+    BuyDeckModal,
   },
   data () {
     return {
@@ -175,6 +184,7 @@ export default {
       hasPublishedSnapshot: false,
       error: false,
       showTextExport: false,
+      showBuyDeck: false,
       isTalkingToServer: false,
     }
   },
@@ -257,6 +267,11 @@ export default {
         this.handleResponseError(error)
         this.error = true
       })
+    },
+    disableBuy() {
+      if(this.$products.products===null) return true;
+      if(this.$products.products.length===0) return true;
+      return this.cardsCount !== 30;
     },
     copyAndEdit (isRedRains) {
       this.isTalkingToServer = true
