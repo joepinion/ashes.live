@@ -116,7 +116,7 @@ export default {
       request(`/v2/decks/${this.id}`, { params: { show_saved: true } }).then(response => {
         this._deck = response.data.deck
         // And set the site title
-        document.title = `Private history for: ${this._deck.title || 'Untitled ' + this._deck.phoenixborn.name} - Ashes.live`
+        document.title = `Private history for: ${this._deck.title || 'Untitled ' + this._deck.phoenixborn.name} - Ashes Deckbuilder`
       }).catch(error => {
         this.handleResponseError(error)
         this.error = true
@@ -141,7 +141,7 @@ export default {
         this.nextSnapshots = response.data.next
         // Set the site title, if necessary
         if (!this.showMine) {
-          document.title = `History for: ${this.topDeck.title || 'Untitled ' + this.topDeck.phoenixborn.name} - Ashes.live`
+          document.title = `History for: ${this.topDeck.title || 'Untitled ' + this.topDeck.phoenixborn.name} - Ashes Deckbuilder`
         }
       }).catch(error => {
         this.handleResponseError(error)

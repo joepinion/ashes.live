@@ -45,7 +45,7 @@
 
         <button :disabled="disableBuy()" @click="showBuyDeck = true" class="btn py-1 w-full mb-4">
           <i class="fas fa-cart-plus"></i>
-          Buy this Deck
+          {{ buyText}}
         </button>
         <buy-deck-modal v-model:open="showBuyDeck" :deck="deck"></buy-deck-modal>
 
@@ -199,6 +199,12 @@ export default {
       if (this.deck.is_snapshot) return this.deck.source_id
       return this.deck.id
     },
+    buyText() {
+      if(this.$products.products===null) return "Loading products...";
+      if(this.$products.products.length===0) return "No products available";
+      if(this.cardsCount!==30) return "Deck is incomplete";
+      return "Purchase This Deck";
+    },
     savedDeck () {
       // This is the latest save we have loaded; necessary for things like tracking the user and snapshot state
       return this._deck
@@ -245,7 +251,7 @@ export default {
         this.hasPublishedSnapshot = !!response.data.has_published_snapshot
         this.last_seen_entity_id = response.data.last_seen_entity_id
         // And set the site title
-        document.title = `${deckTitle(this._deck)} - Ashes.live`
+        document.title = `${deckTitle(this._deck)} - Ashes Deckbuilder`
       }).catch(error => {
         this.handleResponseError(error)
         this.error = true
@@ -254,7 +260,8 @@ export default {
     disableBuy() {
       if(this.$products.products===null) return true;
       if(this.$products.products.length===0) return true;
-      return this.cardsCount !== 30;
+      if(this.cardsCount!==30) return true;
+      return false;
     },
     copyAndEdit (isRedRains) {
       this.isTalkingToServer = true

@@ -13,7 +13,7 @@
     <h1 class="phg-illusion-power">{{ username }}<span class="text-gray">#{{ badge }}</span></h1>
 
     <!-- TODO: move description into a sidebar and add deck-listing that only shows this user's decks -->
-    <card-codes :content="description" needs-paragraphs></card-codes>
+    <card-codes v-if="description" :content="description" needs-paragraphs></card-codes>
     <player-decks :badge="badge" :username="username" />
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
       this.username = response.data.username
       this.description = response.data.description
       // And set the site title
-      document.title = `${this.username}#${this.badge} - Ashes.live`
+      document.title = `${this.username}#${this.badge} - Ashes Deckbuilder`
     }).catch(error => {
       this.error = true
     })

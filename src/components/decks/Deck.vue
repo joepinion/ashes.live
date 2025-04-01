@@ -23,7 +23,7 @@
       </span>
     </div>
     <div class="p-2 text-xs">
-      <div class="m-0 sm:mb-1 font-bold text-xl flex flex-col sm:flex-row">
+      <div class="m-0 sm:mb-1 text-xl flex flex-col sm:flex-row">
         <span class="flex-grow pt-0 sm:pt-2 mb-2 sm:mb-0">
           <router-link :to="linkTarget" class="text-black" :class="{'italic font-normal': !deckData.title}">{{ title }}</router-link>
         </span>

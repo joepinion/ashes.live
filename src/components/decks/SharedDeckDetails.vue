@@ -113,7 +113,7 @@ export default {
       request(`/v2/decks/shared/${this.uuid}`).then(response => {
         this.deck = response.data
         // And set the site title
-        document.title = `Shared: ${this.deck.title || 'Untitled ' + this.deck.phoenixborn.name} - Ashes.live`
+        document.title = `Shared: ${this.deck.title || 'Untitled ' + this.deck.phoenixborn.name} - Ashes Deckbuilder`
       }).catch(error => {
         this.handleResponseError(error)
         this.$router.push('/')

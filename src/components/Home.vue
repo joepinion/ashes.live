@@ -1,38 +1,41 @@
 <template>
-  <div class="sm:flex">
+  <div class="sm:flex flex-wrap">
     <div class="sm:pr-8 pb-8 sm:w-2/3">
-      <h1 class="phg-time-class">Ongoing migration</h1>
+      <h1>The power of deckbuilding like never before.</h1>
 
-      <p>To support Ashes Reborn and make it possible for me to keep the site maintained long-term, I am rewriting everything from the ground up. I will be implementing the majority of the original site's functionality over the coming months, but do please let me know if you have any requests or run into any problems!</p>
+      <p>As Ashes Reborn ascends to the next phase, we're making it the most player-friendly card game on the planet. This website lets you build and purchase any deck to be printed and shipped, or downloaded for print-and-play.</p>
 
-      <p>You can find me on <a href="https://discord.gg/UU5bduq">Discord</a> (<span class="font-mono text-red">Skaak</span>) or <a href="https://www.boardgamegeek.com/user/Skaak">BoardGameGeek</a> if you need to contact me about anything related to Ashes.live, your account, or whatever else!</p>
-
-      <h2>Resources</h2>
-
-      <h3 class="my-4">Play Online</h3>
-
-      <ul class="list-disc pl-4">
-        <li><a href="https://ashteki.com">Ashteki</a> <span class="text-gray">(Play Ashes in your browser! Under active development, so there may be rough edges)</span></li>
-        <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2386753960">Ashes Reborn for Tabletop Simulator</a> <span class="text-gray">(requires Tabletop Simulator on Steam)</span></li>
-        <li><a href="https://felttable.com/ashes">Felt Table</a> <span class="text-gray">(Play against an AI bot in your browser)</span></li>
+      <h2>Purchasing Decks</h2>
+      <ul class="list-disc pl-6 mb-4">
+        <li>Decks must be <strong>complete and legal</strong> to be purchased.</li>
+        <li>Printed and shipped decks are <strong>$19.95</strong> for up to 52 cards, or $24.95 for 53-70 cards (plus shipping).</li>
+        <li>Dice reference cards are <strong>automatically included</strong> if they fit within the card count.</li>
+        <li><strong>Dice</strong> can be added to your cart in sets of 5.</li>
+        <li>Print-and-play <strong>PDF purchases are on the way soon.</strong> In the meantime, we've got 6 pre-constructed decks you can download for free.</li>
+        <li>Purchases are completed at the website of our partner, <strong>ForgeFire</strong>.</li>
+        <li><strong>Create an account</strong> to build your own deck, or purchase any deck you see!</li>
       </ul>
 
-      <h3 class="font-bold my-4">Community</h3>
+      <h2>Ashes.live</h2>
+      <p>This deckbuilder is a fork from the excellent Ashes.live fan deckbuilder. For the sake of user privacy, accounts there are separate. We're working behind the scenes on a feature to import your decks from ashes.live for those who wish.</p>
 
-      <ul class="list-disc pl-4">
-        <li><a href="https://discord.gg/UU5bduq">Community Discord</a> <span class="text-gray">(TTS, Ashteki, or webcam matchmaking + general discussion)</span></li>
-        <li><a href="https://boardgamegeek.com/boardgame/167400/ashes-rise-phoenixborn/forums/0">Ashes on BoardGameGeek</a></li>
+
+    </div>
+    <div class="sm:w-1/3 bg-[#e6e6e6] box-border p-4 border-l-solid border-l-[2px] border-l-white border-r-solid border-r-[2px] border-r-white relative -mt-4">
+      <h2>Discord</h2>
+      <p><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/UU5bduq">Join the Ashes Reborn Discord community</a></p>
+      <h2>6 Free Print-and-Play Decks</h2>
+
+      <p>Professionally printed decks can be bought TODAY, while print-and-play purchases aren't quite ready yet. But we are offering 6 free Ashes Reborn print-and-play PDF decks you can download and print for free!</p>
+      <ul class="list-disc pl-6">
+        <li>The Mist Guardian (links go here)</li>
+        <li>The Men of Iron</li>
+        <li>The Bloodwoods Queen</li>
+        <li>The Snakes in Silver</li>
+        <li>The Shadows of Viros</li>
+        <li>The Cloudsea Siren</li>
       </ul>
-
-       <h3 class="font-bold my-4">Media</h3>
-
-      <ul class="list-disc pl-4">
-        <li><a href="https://wiki.ashes.live">Ashes Community Wiki</a></li>
-        <li><a href="https://www.youtube.com/watch?v=zvvX1HQgwNU&list=PLmHifZPFC_JtixhVcpyDwXv4y6vKN0BUr">Team Covenant</a> <span class="text-gray">(YouTube)</span></li>
-        <li><a href="https://www.plaidhatgames.com/plaid-hat-podcast/">The Plaid Hat Podcast</a></li>
-      </ul>
-
-      <h3 class="font-bold my-4">Files</h3>
+      <h2 class="my-4">Resources</h2>
 
       <ul class="list-disc pl-4">
         <li><a :href="getCDNURL('/files/ashes-reborn-rules.pdf')">Ashes Reborn Rules</a> <span class="text-gray">(PDF)</span></li>
@@ -51,95 +54,6 @@
           </div>
         </li>
       </ul>
-
-      <hr class="border-gray-light mt-6 mb-4">
-
-      <h3 class="font-bold my-4">Legacy 1.0 content</h3>
-
-      <ul class="list-disc pl-4">
-        <li><a :href="getCDNURL('/legacy/files/ashes-core-rules.pdf')">Legacy Rules</a> <span class="text-gray">(PDF)</span></li>
-        <li><a :href="getCDNURL('/legacy/files/ashes-raven-rules.pdf')">Raven Rules</a> <span class="text-gray">(PDF; fan-made replacement for official FAQ)</span></li>
-        <li><a :href="getCDNURL('/legacy/files/ashes-rules-reference.pdf')">Legacy Rules Reference</a> <span class="text-gray">(PDF; all official rules, one document)</span></li>
-        <li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1717839303">Tabletop Simulator: Ashes Custom Workshop</a> <span class="text-gray">(legacy TTS mod; includes Project Phoenix fan-made content)</span></li>
-      </ul>
-    </div>
-    <div class="sm:w-1/3">
-      <h2>Resources for new players</h2>
-
-      <p>Welcome to Ashes Reborn! In addition to the resources below, we would love to have you come say "hello" in the <a href="https://discord.gg/UU5bduq">Community Discord</a>!</p>
-
-      <ul class="list-disc pl-4">
-        <li><a href="https://wiki.ashes.live">Ashes Community Wiki</a> (text; most up-to-date collection of learning material!)</li>
-        <li><a href="https://jaysonsethlindley.medium.com/phoenix-rising-a-new-player-guide-to-ashes-reborn-c93c9d5d981e">Phoenix Rising: A New Player Guide to Ashes Reborn</a> (text; some overlap with the links below)</li>
-        <li><a href="https://beckism.com/2021/04/a-beginners-guide-to-ashes-reborn/">A beginner's guide to Ashes Reborn</a> (text)</li>
-        <li><a href="https://beckism.com/2021/04/archetypal-strategies-in-ashes-reborn/">Archetypal strategies in Ashes Reborn</a> (text; best after you've played a few games)</li>
-        <li><a href="https://jaysonsethlindley.medium.com/colorful-cubes-foundations-of-deckbuilding-in-ashes-reborn-c49cd1abbe29">Colorful Cubes: Foundations of Deckbuilding in Ashes Reborn</a> (text)</li>
-      </ul>
-
-      <hr class="border-gray-light mt-8 mb-4">
-
-      <h2>Current site progress</h2>
-
-      <ul>
-        <li class="flex flex-nowrap">
-          <span class="pr-2">
-            <i class="far fa-check-square"></i>
-          </span>
-          <span>
-            Card browsers: <router-link to="/cards/">Reborn</router-link> and <router-link to="/cards/legacy/">legacy</router-link>
-          </span>
-        </li>
-        <li class="flex flex-nowrap">
-          <span class="pr-2">
-            <i class="far fa-check-square"></i>
-          </span>
-          <span>
-            Private deck building
-          </span>
-        </li>
-        <li class="flex flex-nowrap">
-          <span class="pr-2">
-            <i class="far fa-check-square"></i>
-          </span>
-          <span>
-            Publishing decks; TTS &amp; Ashteki integration
-          </span>
-        </li>
-        <li class="flex flex-nowrap">
-          <span class="pr-2">
-            <i class="far fa-check-square"></i>
-          </span>
-          <span>
-            Private snapshots
-          </span>
-        </li>
-        <li class="flex flex-nowrap">
-          <span class="pr-2">
-            <i class="far fa-check-square"></i>
-          </span>
-          <span>
-            Comments &amp; subscriptions
-          </span>
-        </li>
-        <li class="flex flex-nowrap">
-          <span class="pr-2">
-            <i class="far fa-square"></i>
-          </span>
-          <span class="text-gray-dark">
-            Chimera card browser
-          </span>
-        </li>
-        <li class="flex flex-nowrap">
-          <span class="pr-2">
-            <i class="far fa-square"></i>
-          </span>
-          <span class="text-gray-dark">
-            First five tools
-          </span>
-        </li>
-      </ul>
-
-      <p>If you are a web developer interested in contributing, please <a href="https://github.com/onecrayon/ashes.live">visit the GitHub repo</a>.</p>
     </div>
   </div>
 </template>

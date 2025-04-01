@@ -3,9 +3,9 @@
 
   <div class="sm:flex">
     <div class="sm:order-2 sm:pl-8 sm:w-1/3">
-      <p class="text-lg">Welcome to Ashes.live!</p>
+      <p class="text-lg">Welcome to Ashes Deckbuilder!</p>
 
-      <p><strong>Username</strong> can be anything (though please keep it kid-friendly!), and you will be identified around Ashes.live by a combination of your username and an auto-generated badge; e.g. <player-badge :user="{username: 'IsaacBot', badge: '3000'}" no-link></player-badge>.</p>
+      <p><strong>Username</strong> can be anything (though please keep it kid-friendly!), and you will be identified around Ashes Deckbuilder by a combination of your username and an auto-generated badge; e.g. <player-badge :user="{username: 'PlaidHatGames', badge: '3000'}" no-link></player-badge>.</p>
     </div>
     <div class="sm:w-2/3 sm:order-1">
       <form @submit.prevent="submitRegistration" class="flex flex-col">
@@ -36,7 +36,7 @@
         <div class="mb-4">
           <label><input type="checkbox" v-model="newsletterOptIn"> Notify me of new site features</label>
         </div>
-        <button class="btn btn-blue px-4 py-1 mb-4 sm:w-80" :disabled="!isValid">Join Ashes.live!</button>
+        <button class="btn btn-blue px-4 py-1 mb-4 sm:w-80" :disabled="!isValid">Join Ashes Deckbuilder!</button>
       </form>
     </div>
   </div>
@@ -93,7 +93,7 @@ export default {
         data.description = this.description
       }
       this.$store.dispatch('player/register', data).then(() => {
-        this.toast.success(`Welcome to Ashes.live, ${this.username}!`)
+        this.toast.success(`Welcome to Ashes Deckbuilder, ${this.username}!`)
         this.$router.push('/decks/mine/')
       }).catch(this.handleResponseError)
     },

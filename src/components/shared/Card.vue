@@ -19,7 +19,7 @@
       <div class="flow-root">
         <card-costs class="p-2 float-right text-right" :costs="card.cost"></card-costs>
         <div class="px-2 py-px text-xs">
-          <p class="m-0 font-bold text-lg">
+          <p class="m-0 text-lg">
             <router-link :to="linkTarget" class="text-black">{{ card.name }}</router-link>
             <span v-if="card.phoenixborn" class="text-gray font-normal" :title="card.phoenixborn">
               ({{ card.phoenixborn.split(/,?[ ]/)[0] }})

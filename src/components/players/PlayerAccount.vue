@@ -36,26 +36,6 @@
           v-model="description"
           :disabled="isSubmitting"></text-editor>
 
-        <h2>Notification Settings</h2>
-
-        <div class="mb-4">
-          <label><input type="checkbox" v-model="newsletterOptIn" :disabled="isSubmitting"> Notify me of new site features</label>
-          <div class="text-sm text-gray-darker">
-            Emails are rare, and only focused on major new features or improvements.
-          </div>
-        </div>
-        <div class="mb-4">
-          <label><input type="checkbox" v-model="emailSubscriptions" :disabled="isSubmitting"> Email me subscription notifications</label>
-          <div class="text-sm text-gray-darker">
-            Subscription notifications are emailed whenever a new comment is posted on your subscribed content.
-          </div>
-        </div>
-        <div class="mb-4">
-          <label><input type="checkbox" v-model="excludeSubscriptions" :disabled="isSubmitting"> Exclude subscribed comments from homepage</label>
-          <div class="text-sm text-gray-darker">
-            If you use the <i class="far fa-arrow-circle-right text-base" title="Next Unread Subscription"></i> button, excluding subscribed comments will make the homepage more useful.
-          </div>
-        </div>
 
         <h2>Site Settings</h2>
 

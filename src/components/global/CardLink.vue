@@ -2,7 +2,7 @@
   <span>
     <span @click.capture="linkClick">
       <router-link
-        class="font-bold text-black"
+        class="text-black"
         ref="link"
         :to="cardTarget"
         @pointerover="queueShowDetails"

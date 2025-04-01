@@ -191,7 +191,7 @@ export default {
         this.relatedConjurations = response.data.related_cards.conjurations
       }
       // And set the site title
-      document.title = `${this.card.name} - Ashes.live`
+      document.title = `${this.card.name} - Ashes Deckbuilder`
     }).catch(error => {
       this.error = true
     })

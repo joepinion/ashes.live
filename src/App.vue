@@ -1,88 +1,96 @@
 <template>
   <nav role="navigation" aria-label="Site navigation">
-    <!-- Referencing the style directly through an injected $style element is necessary for modular styles to function; otherwise, the template style name doesn't get rewritten. Due to a wrinkle in Vite 2, we have to use snakeCase instead of hyphens or underscores for class names. -->
-    <div class="bg-inexhaustible" :class="[useFullHeader ? $style.fullHeader : '']">
-      <div :class="$style.banner">
-        <ul
-          class="container mx-auto grid items-center text-center py-2 px-4 gap-x-10 grid-rows-2 md:grid-rows-1"
-          :class="[$style.headerCols, useFullHeader ? 'lg:py-4' : '']">
-          <li class="col-start-1 col-span-3 row-start-1 md:col-start-2 md:col-span-1">
-            <router-link to="/" :class="$style.homeLink">Ashes.live</router-link>
-          </li>
-          <li
-            class="col-start-1 row-start-2 justify-self-start md:row-start-1"
-            :class="[useFullHeader ? 'lg:justify-self-end' : '']">
-            <router-link to="/decks/" class="inline-block text-black leading-tight">
-              <i
-                class="phg-main-action phg-standalone text-2xl pr-2 inline-block"
-                :class="[useFullHeader ? 'lg:block lg:pr-0' : '']"></i>
-              <span class="text-lg">Decks</span>
-            </router-link>
-          </li>
-          <li
-            class="col-start-3 row-start-2 justify-self-end md:row-start-1"
-            :class="[useFullHeader ? 'lg:justify-self-start' : '']">
-            <router-link to="/cards/" class="inline-block text-black leading-tight">
-              <i
-                class="phg-side-action phg-standalone text-2xl pr-2 inline-block"
-                :class="[useFullHeader ? 'lg:block lg:pr-0' : '']"></i>
-              <span class="text-lg">Cards</span>
-            </router-link>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="px-4 container mx-auto">
-      <transition name="slide-vertical">
-        <ul v-if="!isAuthenticated" class="flex py-1">
-          <li class="flex-initial px-2">
-            <link-alike @click="initiateLogin()" use-underline>
-              <i class="fas fa-user-secret text-xl"></i> Log in
-            </link-alike>
-          </li>
-          <li class="flex-initial px-2">
-            <router-link to="/players/new/" class="text-black">
-              <i class="fas fa-user-plus text-xl"></i> Sign up
-            </router-link>
-          </li>
-        </ul>
-        <div v-else class="flex py-1">
-          <ul class="flex flex-wrap flex-grow">
-            <li class="flex-none px-2">
-              <router-link to="/players/me/" class="text-black">
-                <i class="fas fa-user text-xl"></i>
-                {{ myUsername }}<span class="text-gray">#{{ myBadge }}</span>
+    <!-- Referencing the style directly through an inje element is necessary for modular styles to function; otherwise, the template style name doesn't get rewritten. Due to a wrinkle in Vite 2cted $style, we have to use snakeCase instead of hyphens or underscores for class names. -->
+    <div class="relative z-10 xl:z-30">
+      <div :class="[$style.banner, 'banner', 'h-auto', 'md:h-[70px]',]">
+        <div class="container box-border flex flex-col justify-center md:flex-row items-center h-auto md:h-full md:w-full md:justify-between relative">
+          <router-link class="h-[40px] my-2 md:height-3/4" to="/">
+            <img class="header-logo h-full w-auto" src="./assets/ashes-deckbuilder-logo.png" alt="Ashes Deckbuilder" />
+          </router-link>
+          <ul class="h-full flex flex-row justify-center items-center text-xs sm:text-lg uppercase mb-2 md:mb-0 md:mt-1">
+            <li class="md:py-2 px-2">
+              <router-link to="/decks/" class="flex flex-row items-center text-[#8c8c8c]">
+                <i
+                  class="phg-main-action phg-standalone text-md pr-px inline-block"></i>
+                <span class="pl-px">Decks</span>
               </router-link>
             </li>
-            <li class="flex-none px-2">
-              <router-link to="/decks/mine/" class="text-black">
-                <i class="fas fa-th-list text-xl"></i> My decks
+            <li class="px-2 md:py-2">
+              <router-link to="/cards/" class="flex flex-row items-center text-[#8c8c8c]">
+                <i
+                class="phg-side-action phg-standalone text-md pr-px inline-block"></i>
+                <span class="pl-px">Cards</span>
               </router-link>
             </li>
-            <li class="flex-none px-2">
-              <link-alike @click="logOut" use-underline>
-                <i class="fas fa-user-slash text-xl"></i> Log out
-              </link-alike>
+            <li class="pl-2 pr-4 md:py-2">
+              <a href="https://www.plaidhatgames.com/board-games/ashes-rise-phoenixborn/" class="flex flex-row items-center text-[#8c8c8c]">
+                <i
+                class="phg-basic-magic phg-standalone text-md pr-px inline-block"></i>
+                <span clafss="pl-px">Ashes Main</span>
+              </a>
+            </li>
+            <li :class="getMyAccountClass">
+              <div class="flex flex-row items-center hover:underline cursor-pointer" @click="showingUserMenu = !showingUserMenu">
+                <i
+                class="fas fa-user text-md pr-1 inline-block text-[#e0b66c]"></i>
+                <span class="text-[#1398c3]">My Account</span>
+              </div>
             </li>
           </ul>
-          <div class="flex-none relative">
-            <transition name="slide-vertical">
-              <link-alike v-if="isDeckbuilding" use-underline @click="exitDeckbuilder" class="right-0 whitespace-nowrap">
-                <i class="fas fa-times text-xl"></i> Exit builder
-              </link-alike>
-              <link-alike v-else use-underline @click="newDeck" class="right-0 whitespace-nowrap">
-                <i class="fas fa-plus text-xl"></i> New <span v-if="isRedRains">Red Rains</span> deck
-              </link-alike>
-            </transition>
-          </div>
+          <transition name="slide-vertical">
+            <div class="absolute right-0 -bottom-[42px] h-[40px] box-border bg-[#e9e9e9] border-solid border-1 border-white" v-if="showingUserMenu">
+              <ul v-if="!isAuthenticated" class="flex flex-row items-center h-full box-border px-3 text-xs sm:text-base">
+                <li class="diamond-bg pr-10">
+                  <link-alike @click="initiateLogin()" use-underline class="text-[#8c8c8c] hover:underline cursor-pointer">
+                    Log in
+                  </link-alike>
+                </li>
+                <li class="diamond-bg">
+                  <router-link to="/players/new/" class="text-[#8c8c8c] hover:underline cursor-pointer">
+                    Sign up
+                  </router-link>
+                </li>
+              </ul>
+              <ul v-else class="flex flex-row items-center h-full box-border px-3  text-xs sm:text-base">
+                <li class="diamond-bg pr-5 sm:pr-10">
+                  <router-link to="/players/me/" class="text-[#8c8c8c]">
+                    Settings
+                  </router-link>
+                </li>
+                <li class="diamond-bg pr-5 sm:pr-10">
+                  <router-link to="/decks/mine/" class="text-[#8c8c8c]">
+                    My decks
+                  </router-link>
+                </li>
+                <li class="diamond-bg pr-5 sm:pr-10">
+                  <link-alike use-underline @click="newDeck" class="text-[#1398c3]">
+                    New <span v-if="isRedRains">Red Rains</span> deck
+                  </link-alike>
+                </li>
+                <li class="diamond-bg">
+                  <link-alike @click="logOut" use-underline class="text-[#8c8c8c]">
+                    Log out
+                  </link-alike>
+                </li>
+              </ul>
+            </div>
+          </transition>
         </div>
-      </transition>
+      </div>
+      <a v-if="$route.path==='/'" href="https://www.kickstarter.com/projects/plaidhatgames/ashes-ascendancy" class="w-full overflow-hidden flex box-border justify-center border-b-solid border-b-[2px] border-b-[#aaaaaa]">
+        <img
+          :src="getCDNURL('/images/banners/ks.jpg')"
+          alt="Ashes Ascendency. Now on Kickstarter"
+          class="w-[110%] h-auto max-w-[1920px] flex-shrink-0 lg:w-full"
+        />
+      </a>
     </div>
+
     <log-in-modal v-model:open="isLogInModalOpen" @login:success="finalizeLogin(true)" @login:canceled="finalizeLogin(false)">
       <p v-if="onLoginSuccess">Your session has expired. Please login to continue.</p>
     </log-in-modal>
   </nav>
-  <div class="p-4 container mx-auto lg:pt-8 flex relative">
+  <div :class="['p-4', 'container', 'mx-auto', 'lg:pt-4', 'flex', 'min-h-[90vh]', 'relative', $route.path !== '/' ? 'xl:mt-6' : '']">
     <div :class="[$style.transitionWidth, isDeckbuilding ? 'xl:w-2/3' : '']">
       <!-- Keying to the route path is necessary, because legacy routes tend to share the same components, and without keying against the path they won't receive standard router lifecycle calls -->
       <router-view :key="$route.path"></router-view>
@@ -91,9 +99,8 @@
       <builder v-if="isDeckbuilding" :class="$style.screenWidth"></builder>
     </transition>
   </div>
-  <footer class="container mx-auto p-4 pt-10 text-center text-xs">
-    <p>All images, graphics, textual and game contents &copy; 2015-{{ thisYear }} Plaid Hat Games. All rights reserved.</p>
-    <p>Forked from <a href="https://github.com/onecrayon/ashes.live" rel="external" target="_blank">ashes.live</a> and <a href="https://github.com/onecrayon/api.ashes.live" rel="external" target="_blank">api.ashes.live</a>.</p>
+  <footer class="footer text-[#aaaaaa] mx-auto p-2 w-full text-center text-xs box-border border-t-solid border-t-[2px] border-t-[#aaaaaa]">
+    <p>All images, graphics, textual and game contents &copy; 2015-{{ thisYear }} Plaid Hat Games. All rights reserved. Forked from <a class="text-[#aaaaaa] underline" href="https://github.com/onecrayon/ashes.live" rel="external" target="_blank">ashes.live</a> and <a class="text-[#aaaaaa] underline"href="https://github.com/onecrayon/api.ashes.live" rel="external" target="_blank">api.ashes.live</a>.</p>
   </footer>
 </template>
 
@@ -111,7 +118,7 @@ axios.defaults.paramsSerializer = {indexes: null}
 
 function siteTitle(routeObject) {
   // Returns the title that should be used based on the $route object
-  return routeObject.meta && routeObject.meta.title && `${routeObject.meta.title} - Ashes.live` || 'Ashes.live'
+  return routeObject.meta && routeObject.meta.title && `${routeObject.meta.title} - Ashes Deckbuilder` || 'Ashes Deckbuilder'
 }
 
 export default {
@@ -129,6 +136,7 @@ export default {
     isLogInModalOpen: false,
     onLoginSuccess: null,
     onLoginFailure: null,
+    showingUserMenu: false,
   }),
   created () {
     // Set the page title when the app is loaded for the first time
@@ -162,6 +170,12 @@ export default {
     isRedRains () {
       return !!this.$route.meta.showRedRains
     },
+    getMyAccountClass() {
+      if(this.showingUserMenu) {
+        return "h-full flex flex-row items-center md:border-b md:border-b-solid md:border-b-[6px] md:border-b-[#aaaaaa] md:pt-[6px]";
+      }
+      return "h-full flex flex-row items-center";
+    }
   },
   watch: {
     $route(to, from) {
@@ -172,7 +186,11 @@ export default {
   },
   methods: {
     newDeck () {
+      this.showingUserMenu = false;
       this.$store.commit('builder/enable', this.isRedRains)
+    },
+    getCDNURL(path) {
+      return import.meta.env.VITE_CDN_URL + path
     },
     exitDeckbuilder () {
       this.$store.dispatch('builder/reset')
@@ -202,23 +220,39 @@ export default {
 }
 </script>
 
-<!-- Specifying the lang as "postcss" isn't strictly necessary, but makes VS Code syntax highlighting work properly -->
-<style lang="postcss" module>
+<style>
 .banner {
   position: relative;
-
-  /* This creates the bottom "border" of the main header */
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0;
-    width: 100%;
-    border-top: 1px solid var(--color-white);
-    border-bottom: 3px solid var(--color-gray);
-  }
+  box-sizing: border-box;
+  border-bottom: 2px solid #aaaaaa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #c8c8c8 0%, #ffffff 60%);
+  background-image: url('./assets/header-bg.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
 }
+.diamond-bg {
+  background: url('/src/assets/icon-diamond-bullet.png') no-repeat;
+  background-size: 11px 11px;
+  background-position: left center;
+  padding-left: 18px;
+  box-sizing: border-box;
+}
+.footer {
+  background-image: url('./assets/footer-bg.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: top center;
+}
+</style>
+
+<!-- Specifying the lang as "postcss" isn't strictly necessary, but makes VS Code syntax highlighting work properly -->
+<style lang="postcss" module>
+
+
 
 .headerCols {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);

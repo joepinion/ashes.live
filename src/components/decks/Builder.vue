@@ -2,15 +2,15 @@
   <section
     class="
       transition-transform duration-300 ease-in-out
-      fixed top-0 right-0 bottom-0 bg-white shadow-md p-8
-      xl:static xl:inset-auto xl:p-0 xl:pb-4 xl:pl-8 xl:w-1/3 xl:shadow-none"
+      fixed top-0 right-0 bottom-0 shadow-md p-8 bg-[#f2f2f2]
+      xl:relative xl:inset-auto xl:p-0 xl:pb-4 xl:pl-8 xl:w-1/3 xl:shadow-none z-20"
     :class="{
       'overflow-y-auto': paneOpen,
       'transform translate-x-full shadow-none overflow-visible xl:transform-none': !paneOpen,
     }">
     <div class="flex mb-4">
       <button
-        class="xl:hidden text-xl py-2 w-10 bg-white"
+        class="xl:hidden text-xl py-2 w-10"
         :class="{
           'absolute top-32 md:top-24 -left-10 shadow-md': !paneOpen,
         }"
@@ -20,9 +20,12 @@
         <i class="fas" :class="{'fa-chevron-double-right': paneOpen, 'fa-chevron-double-left': !paneOpen}"></i>
         <span class="alt-text">Toggle pane</span>
       </button>
-      <h1 class="m-0 flex-grow" :class="{'phg-ceremonial-class': !deck.is_red_rains, 'phg-red-rain': deck.is_red_rains}">
+      <h2 class="m-0 flex-grow" :class="{'phg-ceremonial-class': !deck.is_red_rains, 'phg-red-rain': deck.is_red_rains}">
         Build your <span v-if="deck.is_red_rains" class="alt-text">Red Rains</span> deck
-      </h1>
+      </h2>
+      <link-alike use-underline @click="exitDeckbuilder" class="fixed top-1 right-2 whitespace-nowrap xl:relative right-6">
+          Exit builder <i class="fas fa-times text-xl"></i>
+      </link-alike>
       <button
         class="text-3xl pl-2 leading-none"
         :class="{'text-blue': showActions}"
@@ -219,6 +222,9 @@ export default {
       this.$nextTick(() => {
         this.$refs.description.focus()
       })
+    },
+    exitDeckbuilder () {
+      this.$store.dispatch('builder/reset')
     },
     closeDescriptionEditor () {
       this.editingDescription = false

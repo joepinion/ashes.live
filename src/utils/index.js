@@ -145,7 +145,11 @@ export function integerQueryParam(value) {
  * @param {bool} isLegacy If the card is from the Ashes 1.0 set as opposed to the Reborn set
  */
 export function getPhoenixbornImageUrl(stub, isLarge = false, isLegacy = false) {
-  return isLegacy ?
-    `${ASHES_CDN_BASE_URL}/legacy/images/cards/${stub}-${isLarge ? 'large' : 'slice'}.jpg` :
-    `${ASHES_CDN_BASE_URL}/images/phoenixborn${isLarge ? '' : '-badges'}/${stub}.jpg`
+  if(isLegacy) {
+    return `${ASHES_CDN_BASE_URL}/legacy/images/cards/${stub}-${isLarge ? 'large' : 'slice'}.jpg`;
+  }
+  if(!isLarge) {
+    return `${ASHES_CDN_BASE_URL}/images/phoenixborn-badges/${stub}.jpg`;
+  }
+  return `${ASHES_CDN_BASE_URL}/images/phoenixborn/${stub}.png`;
 }
