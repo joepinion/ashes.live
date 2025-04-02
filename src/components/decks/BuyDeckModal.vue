@@ -4,6 +4,7 @@
       <img :src="pbImgUrl" class="hidden sm:block w-auto mr-10 h-[90vh]" />
       <div class="sm:mx-auto flex flex-col items-center text-[#aaaaaa]">
         <h2 class="font-bold">Purchase This Deck</h2>
+        <p class="text-[#aaaaaa] text-xs text-center italic mt-0 mb-3">Adding products to your cart will send you to our partner, ForgeFire, to complete the purchase.</p>
         <h3 class="text-xl">Cards</h3>
         <div class="mb-4" v-if="!this.hasDeckProduct">There are no card products available for this deck. It may be too large.</div>
         <div class="one-product flex items-start justify-center mb-2" v-for="product in this.productList(true, false)">
@@ -118,7 +119,6 @@ export default {
       let has_basic = false;
       let has_digital = false;
       let diceCards = this.diceCards;
-      console.log(this.deck.phoenixborn.stub);
       for(let one_product of this.$products.products) {
         if(one_product.deck) {
           if(!include_card) continue;
@@ -167,7 +167,7 @@ export default {
     },
     addProductToCart(product) {
       if(!product.available) return;
-      let come_back = `${location.protocol}//${location.host}${this.$router.currentRoute.value.path}`;
+      let come_back = `${location.protocol}//${location.host}${this.$router.currentRoute.value.path}#buy`;
       if(product.deck) {
         this.$products.getLink(product.sku, {return_to: come_back, title: this.deck.title, cards: product.attributes.cards}).then(r=>{
           if(r.ok) {

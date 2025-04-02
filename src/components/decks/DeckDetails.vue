@@ -246,7 +246,11 @@ export default {
       if(this.products===null) {
         this.productTimer = setTimeout(()=>{
           this.checkProducts();
-        }, 3000);
+        }, 500);
+      } else {
+        if(window.location.hash==="#buy") {
+          this.showBuyDeck = true;
+        }
       }
     },
     loadDeck () {
