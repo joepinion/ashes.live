@@ -169,6 +169,8 @@ export default {
       showTextExport: false,
       showBuyDeck: false,
       isTalkingToServer: false,
+      products: null,
+      productTimer: null,
     }
   },
   beforeMount () {
@@ -178,10 +180,13 @@ export default {
       if (oldValue === this._deck.id && value !== oldValue) {
         this.$nextTick(this.loadDeck)
       }
-    })
+    });
+
+    this.checkProducts();
   },
   beforeUnmount () {
     this.unwatchBuilderId()
+    clearTimeout(this.productTimer);
   },
   computed: {
     showMine () {
@@ -200,8 +205,8 @@ export default {
       return this.deck.id
     },
     buyText() {
-      if(this.$products.products===null) return "Loading products...";
-      if(this.$products.products.length===0) return "No products available";
+      if(this.products===null) return "Loading products...";
+      if(this.products.length===0) return "No products available";
       if(this.cardsCount!==30) return "Deck is incomplete";
       return "Purchase This Deck";
     },
@@ -236,6 +241,14 @@ export default {
     },
   },
   methods: {
+    checkProducts() {
+      this.products = this.$products.products;
+      if(this.products===null) {
+        this.productTimer = setTimeout(()=>{
+          this.checkProducts();
+        }, 3000);
+      }
+    },
     loadDeck () {
       const options = {}
       if (this.showMine) {
@@ -258,8 +271,8 @@ export default {
       })
     },
     disableBuy() {
-      if(this.$products.products===null) return true;
-      if(this.$products.products.length===0) return true;
+      if(this.products===null) return true;
+      if(this.products.length===0) return true;
       if(this.cardsCount!==30) return true;
       return false;
     },
