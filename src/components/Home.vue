@@ -13,7 +13,7 @@
         <li><strong>Dice</strong> can be added to your cart in sets of 5.</li>
         <li>Print-and-play <strong>PDF purchases are on the way soon.</strong> In the meantime, we've got 6 pre-constructed decks you can download for free.</li>
         <li>Purchases are completed at the website of our partner, <strong>ForgeFire</strong>.</li>
-        <li><strong>Create an account</strong> to build your own deck, or purchase any deck you see!</li>
+        <li>Purchase any deck you see, or <strong>create an account</strong> to build your own deck!</li>
       </ul>
 
       <h2>Ashes.live</h2>
@@ -28,20 +28,22 @@
 
       <p>Professionally printed decks can be bought TODAY, while print-and-play purchases aren't quite ready yet. But we are offering 6 free Ashes Reborn print-and-play PDF decks you can download and print for free!</p>
       <ul class="list-disc pl-6">
-        <li>The Mist Guardian (links go here)</li>
-        <li>The Men of Iron</li>
-        <li>The Bloodwoods Queen</li>
-        <li>The Snakes in Silver</li>
-        <li>The Shadows of Viros</li>
-        <li>The Cloudsea Siren</li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Mist_Guardian.pdf" target="_blank" rel="noopener noreferrer">The Mist Guardian</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Iron_Men.pdf" target="_blank" rel="noopener noreferrer">The Men of Iron</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Bloodwoods_Queen.pdf" target="_blank" rel="noopener noreferrer">The Bloodwoods Queen</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Snakes_in_Silver.pdf" target="_blank" rel="noopener noreferrer">The Snakes in Silver</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Shadows_of_Viros.pdf" target="_blank" rel="noopener noreferrer">The Shadows of Viros</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Cloudsea_Siren.pdf" target="_blank" rel="noopener noreferrer">The Cloudsea Siren</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-Dice-Reference-Cards.pdf" target="_blank" rel="noopener noreferrer">Dice Reference Cards</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-Upgrade_Kit.pdf" target="_blank" rel="noopener noreferrer">Ashes 1.0 Upgrade Kit</a></li>
       </ul>
       <h2 class="my-4">Resources</h2>
 
       <ul class="list-disc pl-4">
-        <li><a :href="getCDNURL('/files/ashes-reborn-rules.pdf')">Ashes Reborn Rules</a> <span class="text-gray">(PDF)</span></li>
-        <li><a :href="getCDNURL('/files/ashes-reborn-faq.pdf')">Ashes Reborn FAQ</a> <span class="text-gray">(PDF)</span></li>
-        <li><a :href="getCDNURL('/files/ashes-reborn-op-rules.pdf')">Ashes Reborn Organized Play Rules</a> <span class="text-gray">(PDF)</span></li>
-        <li><a :href="getCDNURL('/files/ashes-red-rains-rules.pdf')">Ashes Red Rains Rules</a> or <a :href="getCDNURL('/files/ashes-red-rains-combined-rules.pdf')">Exhaustive Red Rains Rules</a> <span class="text-gray">(PDF)</span></li>
+        <li><a href="https://media.plaidhatgames.com/filer_public/23/15/23151a90-9295-4a82-87d0-970df6dc5f04/ashes_reborn_rulebook_final.pdf">Ashes Reborn Rules</a> <span class="text-gray">(PDF)</span></li>
+        <li><a href="https://media.plaidhatgames.com/filer_public/fd/5b/fd5baa4b-67bf-4aef-8b3e-1788871eb06b/ashes_reborn-faq-version5-proof1.pdf">Ashes Reborn FAQ</a> <span class="text-gray">(PDF)</span></li>
+        <li><a href="https://media.plaidhatgames.com/filer_public/0e/c9/0ec90e44-c48d-4f04-85e1-5afc34cd5d27/op_rules-version6.pdf">Ashes Reborn Organized Play Rules</a> <span class="text-gray">(PDF)</span></li>
+        <li><a href="https://www.plaidhatgames.com/board-games/ashes-rise-phoenixborn/">...and more at PlaidHatGames.com</a></li>
         <li>Dice reference cards:
           <div class="text-2xl mt-1">
             <a class="die ceremonial phg-ceremonial-power py-1 px-2" :href="getCDNURL('/images/cards/ceremonial-magic.jpg')" target="_blank"><span class="alt-text">Ceremonial Magic</span></a>

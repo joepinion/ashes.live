@@ -100,7 +100,7 @@
     </transition>
   </div>
   <footer class="footer text-[#aaaaaa] mx-auto p-2 w-full text-center text-xs box-border border-t-solid border-t-[2px] border-t-[#aaaaaa]">
-    <p>All images, graphics, textual and game contents &copy; 2015-{{ thisYear }} Plaid Hat Games. All rights reserved. Forked from <a class="text-[#aaaaaa] underline" href="https://github.com/onecrayon/ashes.live" rel="external" target="_blank">ashes.live</a> and <a class="text-[#aaaaaa] underline"href="https://github.com/onecrayon/api.ashes.live" rel="external" target="_blank">api.ashes.live</a>.</p>
+    <p>Bugs can be sent to ashesdb@plaidhatgames.com.<br />All images, graphics, textual and game contents &copy; 2015-{{ thisYear }} Plaid Hat Games. All rights reserved. Forked from <a class="text-[#aaaaaa] underline" href="https://github.com/onecrayon/ashes.live" rel="external" target="_blank">ashes.live</a> and <a class="text-[#aaaaaa] underline"href="https://github.com/onecrayon/api.ashes.live" rel="external" target="_blank">api.ashes.live</a>.</p>
   </footer>
 </template>
 

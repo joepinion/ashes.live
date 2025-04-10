@@ -203,7 +203,7 @@ export default {
     imageURL () {
       if (!this.card) return ''
       if (this.showLegacy) return `${import.meta.env.VITE_CDN_URL}/legacy/images/cards/${this.stub}.jpg`
-      return `${import.meta.env.VITE_CDN_URL}/images/cards/${this.stub}.jpg`
+      return `${import.meta.env.VITE_CDN_URL}/images/new-cards/${this.stub.replaceAll('-','_')}.jpg`
     },
     isPhoenixborn () {
       return this.card.type === 'Phoenixborn'
