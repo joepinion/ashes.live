@@ -35,14 +35,15 @@
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Shadows_of_Viros.pdf" target="_blank" rel="noopener noreferrer">The Shadows of Viros</a></li>
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Cloudsea_Siren.pdf" target="_blank" rel="noopener noreferrer">The Cloudsea Siren</a></li>
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-Dice-Reference-Cards.pdf" target="_blank" rel="noopener noreferrer">Dice Reference Cards</a></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-Upgrade_Kit.pdf" target="_blank" rel="noopener noreferrer">Ashes 1.0 Upgrade Kit</a></li>
+        <li>Ashes 1.0 Upgrade Kit - temporarily unavailable until files are up to date. But currently <a href="https://www.plaidhatgames.com/product/ashes-reborn-15-upgrade-kit/">available on our web store.</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/errata.pdf">Ashes Reborn Errata Print and Play Cards</a></li>
       </ul>
       <h2 class="my-4">Resources</h2>
 
       <ul class="list-disc pl-4">
         <li><a href="https://media.plaidhatgames.com/filer_public/23/15/23151a90-9295-4a82-87d0-970df6dc5f04/ashes_reborn_rulebook_final.pdf">Ashes Reborn Rules</a> <span class="text-gray">(PDF)</span></li>
-        <li><a href="https://media.plaidhatgames.com/filer_public/fd/5b/fd5baa4b-67bf-4aef-8b3e-1788871eb06b/ashes_reborn-faq-version5-proof1.pdf">Ashes Reborn FAQ</a> <span class="text-gray">(PDF)</span></li>
-        <li><a href="https://media.plaidhatgames.com/filer_public/0e/c9/0ec90e44-c48d-4f04-85e1-5afc34cd5d27/op_rules-version6.pdf">Ashes Reborn Organized Play Rules</a> <span class="text-gray">(PDF)</span></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/faq7.pdf">Ashes Reborn FAQ</a> <span class="text-gray">(PDF)</span></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/op7.pdf">Ashes Reborn Organized Play Rules</a> <span class="text-gray">(PDF)</span></li>
         <li><a href="https://www.plaidhatgames.com/board-games/ashes-rise-phoenixborn/">...and more at PlaidHatGames.com</a></li>
         <li>Dice reference cards:
           <div class="text-2xl mt-1">
