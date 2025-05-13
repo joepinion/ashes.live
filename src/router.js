@@ -73,6 +73,15 @@ const router = createRouter({
       },
     },
     {
+      path: '/decks/unrestricted/',
+      name: 'UnrestrictedDecks',
+      component: PublicDecks,
+      meta: {
+        title: 'Unrestricted Decks',
+        showUnrestricted: true,
+      },
+    },
+    {
       path: '/decks/preconstructed/',
       redirect: {
         name: 'Decks',
@@ -107,6 +116,16 @@ const router = createRouter({
         title: 'My Red Rains Decks',
         needsAuth: true,
         showRedRains: true,
+      },
+    },
+    {
+      path: '/decks/mine/unrestricted/',
+      name: 'UnrestrictedPlayerDecks',
+      component: PlayerDecks,
+      meta: {
+        title: 'My Unrestricted Decks',
+        needsAuth: true,
+        showUnrestricted: true,
       },
     },
     {

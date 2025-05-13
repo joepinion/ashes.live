@@ -7,6 +7,7 @@
         v-model:search="filterText"
         :is-disabled="isDisabled"></clearable-search>
       <phoenixborn-picker
+        v-if="!showUnrestricted"
         class="flex-auto h-10 mb-4 md:pr-4 md:mb-0"
         placeholder="Filter by Phoenixborn..."
         v-model:filter="phoenixborn"
@@ -89,6 +90,9 @@ export default {
     },
     showRedRains () {
       return !!this.$route.meta.showRedRains
+    },
+    showUnrestricted () {
+      return !!this.$route.meta.showUnrestricted
     },
     havePreviousDecks () {
       return this.offset > 0
@@ -245,6 +249,9 @@ export default {
       }
       if (this.showRedRains) {
         params['show_red_rains'] = true
+      }
+      if(this.showUnrestricted) {
+        params['show_unrestricted'] = true
       }
       const filterText = trimmed(this.filterText)
       if (this.phoenixborn) params.phoenixborn = this.phoenixborn

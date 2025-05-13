@@ -88,15 +88,17 @@
       <div
         class="lg:w-2/3 lg:order-1 flex">
         <div
+          v-if="!deck.is_unrestricted"
           class="flex-none bg-no-repeat sm:pl-40"
           :class="$style.minHeight400"
           aria-hidden="true"
           :style="`background-image: url(${phoenixbornImagePath})`"></div>
         <div class="flex-grow pb-4">
-          <h2 class="text-3xl">
+          <h2 v-if="deck.is_unrestricted" class="text-3xl">Unrestricted Deck</h2>
+          <h2 v-else class="text-3xl">
             <card-link :card="deck.phoenixborn"></card-link>
           </h2>
-          <ul class="mb-2 mt-2 text-xs">
+          <ul v-if="!deck.is_unrestricted" class="mb-2 mt-2 text-xs">
             <strong
             v-if="deck.phoenixborn.battlefield !== undefined"
             class="inline-block border border-red-light px-1">Battlefield {{ deck.phoenixborn.battlefield }}</strong>
@@ -112,7 +114,7 @@
           <h3 class="text-lg flex mb-1">
             <span class="flex-grow">Cards</span>
             <span class="flex-none text-sm font-bold" :class="[ cardsCount != 30 ? 'text-red' : 'text-gray-darker']">
-              {{ cardsCount }}/30
+              {{ cardsCount }}/{{ deck.is_unrestricted ? '100' : '30' }}
             </span>
           </h3>
           <deck-cards-preview :deck="deck" :columnLayout="true"/>
@@ -207,11 +209,13 @@ export default {
     buyText() {
       if(this.products===null) return "Loading products...";
       if(this.products.length===0) return "No products available";
+      if(this.deck.is_unrestricted) return "Purchase This Deck";
       if(this.cardsCount!==30) return "Deck is incomplete";
       return "Purchase This Deck";
     },
     savedDeck () {
       // This is the latest save we have loaded; necessary for things like tracking the user and snapshot state
+      console.log('savedeck un', this._deck.is_unrestricted);
       return this._deck
     },
     user () {
@@ -277,6 +281,7 @@ export default {
     disableBuy() {
       if(this.products===null) return true;
       if(this.products.length===0) return true;
+      if(this.deck.is_unrestricted) return false;
       if(this.cardsCount!==30) return true;
       return false;
     },

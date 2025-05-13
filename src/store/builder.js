@@ -42,6 +42,7 @@ const getBaseState = () => ({
     // These aren't necessary for saving the deck, but cacheing them improves display logic
     conjurations: [],
     direct_share_uuid: null,
+    is_unrestricted: false,
   },
   // This is a local-only cache of stubs as keys and quantities as values (much simpler for per-card lookups)
   countMap: {},
@@ -81,6 +82,7 @@ const actions = {
       commit('setPhoenixborn', deck.phoenixborn)
       commit('setModified', deck.modified)
       commit('setRedRains', deck.is_red_rains)
+      commit('setUnrestricted', deck.is_unrestricted)
       for (const dieObject of deck.dice) {
         commit('setDieCount', dieObject)
       }
@@ -136,6 +138,7 @@ const actions = {
         effect_costs: state.deck.effect_costs,
         tutor_map: state.deck.tutor_map,
         is_red_rains: state.deck.is_red_rains,
+        is_unrestricted: state.deck.is_unrestricted,
       }
       if (state.deck.id) {
         data.id = state.deck.id
@@ -263,6 +266,12 @@ const actions = {
       dispatch('SAVE_DECK').then(resolve).catch(reject)
     })
   },
+  setUnrestricted ({ commit, dispatch, state }) {
+    if (!state.enabled) return reject('You cannot modify a deck when the deckbuilder is not active.')
+      commit('setUnrestricted', true)
+      commit('setPhoenixborn', {'name': 'Jericho, Reborn', 'stub': 'jericho-reborn'})
+      dispatch('SAVE_DECK').then(resolve).catch(reject)
+  },
   setCardCount ({ commit, dispatch, state }, { card, count }) {
     const stub = card.stub
     return new Promise((resolve, reject) => {
@@ -315,6 +324,9 @@ const mutations = {
   },
   setRedRains (state, value) {
     state.deck.is_red_rains = value
+  },
+  setUnrestricted(state, value) {
+    state.deck.is_unrestricted = value
   },
   setPhoenixborn (state, card) {
     if (state.deck.phoenixborn && state.deck.phoenixborn.stub === card.stub) return

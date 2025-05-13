@@ -36,7 +36,7 @@
     <hr class="mt-6 mb-4">
 
     <div class="flex mb-4">
-      <h3 class="flex-grow m-0">Cards <span class="text-gray">(<span :class="{'text-red': totalCards > 30}">{{ totalCards }} / 30</span>)</span></h3>
+      <h3 class="flex-grow m-0">Cards <span class="text-gray">(<span :class="{'text-red': totalCards > 30}">{{ totalCards }} / {{ is_unrestricted ? '100' : '30' }}</span>)</span></h3>
       <button class="text-lg text-black px-1" title="Add cards..." @click="addCards">
         <i class="fas fa-plus"></i>
         <span class="alt-text">Add cards...</span>
@@ -135,6 +135,9 @@ export default {
     },
     conjurations () {
       return this.$store.state.builder.deck.conjurations
+    },
+    is_unrestricted () {
+      return this.$store.state.builder.deck.is_unrestricted
     },
     totalConjurations () {
       return this.$store.state.builder.deck.conjurations.reduce((value, card) => value + card.count, 0)

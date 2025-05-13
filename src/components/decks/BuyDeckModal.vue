@@ -72,19 +72,24 @@ export default {
   },
   computed: {
     pbImgUrl() {
+      if(this.deck.is_unrestricted) return null;
       return getPhoenixbornImageUrl(this.deck.phoenixborn.stub, true);
     },
     cardList() {
       let cards = [];
-      cards.push(this.deck.phoenixborn.name);
+      if(!this.deck.is_unrestricted) {
+        cards.push(this.deck.phoenixborn.name);
+      }
       for(let one_card of this.deck.cards) {
         for(let i=0; i<one_card.count; i++) {
           cards.push(one_card.name);
         }
       }
-      for(let one_card of this.deck.conjurations) {
-        for(let i=0; i<one_card.count; i++) {
-          cards.push(one_card.name);
+      if(!this.deck.is_unrestricted) {
+        for(let one_card of this.deck.conjurations) {
+          for(let i=0; i<one_card.count; i++) {
+            cards.push(one_card.name);
+          }
         }
       }
       return cards;
@@ -122,7 +127,16 @@ export default {
       for(let one_product of this.$products.products) {
         if(one_product.deck) {
           if(!include_card) continue;
-          if(cards.length<one_product.attributes.max) {
+          if(this.deck.is_unrestricted) {
+            if(one_product.attributes.unrestricted===true) {
+              if(cards.length<one_product.attributes.max) {
+                one_product.text = "Print on Demand";
+                one_product.subtitle = "Unrestricted card list";
+                one_product.attributes.cards = cards;
+                products.push(one_product);
+              }
+            }
+          } else if(cards.length<one_product.attributes.max) {
             if(cards.length+diceCards.length<one_product.attributes.max) {
               one_product.attributes.cards = [...cards, ...diceCards];
               if(one_product.attributes.physical) {

@@ -1,5 +1,37 @@
 <template>
-  <div v-if="isDeckbuilderActive && isNotConjuration && !card.is_legacy">
+  <div v-if="isDeckbuilderActive && isUnrestricted">
+    <button
+        class="flex-none"
+        :class="{
+          [$style.btn]: true,
+          [$style.btnActive]: false,
+          [$style.btnFirst]: true,
+          [$style.btnLast]: false,
+          [$style.standalone]: true,
+        }"
+        @click="setCardCount(card, this.deckCount-1)"
+        :disabled="isSaving || this.deckCount===0">
+          <i class="fas fa-minus"><span class="alt-text">1 less</span></i>
+      </button>
+      <button
+        class="flex-none"
+        :class="{
+          [$style.btn]: true,
+          [$style.btnActive]: false,
+          [$style.btnFirst]: false,
+          [$style.btnLast]: true,
+          [$style.standalone]: true,
+        }"
+        @click="setCardCount(card, this.deckCount+1)"
+        :disabled="isSaving">
+          <i class="fas fa-plus"><span class="alt-text">1 more</span></i>
+      </button>
+      <span
+        class="w-7 inline-block text-center">
+        {{ deckCount }}
+      </span>
+  </div>
+  <div v-else-if="isDeckbuilderActive && isNotConjuration && !card.is_legacy">
     <div v-if="isPhoenixborn"
       :class="{
         shadow: isPopup,
@@ -54,6 +86,10 @@ export default {
     card: {
       required: true,
     },
+    freeforall:{
+      type: Boolean,
+      default: false,
+    },
     standalone: {
       type: Boolean,
       default: false,
@@ -73,6 +109,9 @@ export default {
     },
     isDeckbuilderActive () {
       return this.$store.state.builder.enabled
+    },
+    isUnrestricted() {
+      return this.$store.state.builder.deck.is_unrestricted
     },
     isNotConjuration () {
       return this.card.type !== 'Conjuration' && this.card.type !== 'Conjured Alteration Spell'

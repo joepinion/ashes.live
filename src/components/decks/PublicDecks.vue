@@ -9,7 +9,7 @@
         <router-link
           :to="{name: 'Decks'}"
           class="phg-main-action block mb-2 sm:mb-0 btn sm:btn-first hover:no-underline text-black"
-          :class="{'active cursor-text': !showLegacy && !showRedRains}">
+          :class="{'active cursor-text': !showLegacy && !showRedRains && !showUnrestricted}">
           Competitive
         </router-link>
       </li>
@@ -19,6 +19,14 @@
           class="phg-red-rain block mb-2 sm:mb-0 btn sm:btn-inner hover:no-underline text-black"
           :class="{'active cursor-text': showRedRains}">
           Red Rains
+        </router-link>
+      </li>
+      <li class="flex-auto">
+        <router-link
+          :to="{name: 'UnrestrictedDecks'}"
+          class="phg-basic-magic block mb-2 sm:mb-0 btn sm:btn-last hover:no-underline text-black"
+          :class="{'active cursor-text': showUnrestricted}">
+          Unrestricted
         </router-link>
       </li>
     </ul>
@@ -41,6 +49,9 @@ export default {
     },
     showRedRains () {
       return !!this.$route.meta.showRedRains
+    },
+    showUnrestricted () {
+      return !!this.$route.meta.showUnrestricted
     },
   },
 }

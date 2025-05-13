@@ -39,6 +39,10 @@
     <transition-height>
       <div v-if="showActions" class="text-sm flex flex-wrap justify-end">
         <div class="mb-2 flex-none">
+          <button class="btn mr-2">
+            <i class="fas fa-balance-scale"></i>
+            Legal Mode
+          </button>
           <button class="btn btn-first" @click="previewDeck">
             <i class="fas fa-eye"></i>
             Preview
@@ -53,7 +57,7 @@
             <i class="far fa-camera"></i>
             Snapshot...
           </button>
-          <button class="btn btn-last btn-green" @click="snapshotDeck(true)" :disabled="invalidDeck">
+          <button class="btn btn-last btn-green" @click="snapshotDeck(true)" :disabled="cantPublish">
             <i class="far fa-plus-square"></i>
             Publish...
           </button>
@@ -89,7 +93,9 @@
       <p class="text-lg">
         <link-alike @click="choosePhoenixborn" use-underline use-color>Choose your Phoenixborn</link-alike> to get started!
       </p>
-      <p class="text-gray">(Don't worry, you can always change your mind.)</p>
+      <p class="text-lg">
+        <link-alike @click="chooseUnrestricted" use-underline use-color>Or build an unrestricted deck without rules.</link-alike>
+      </p>
     </div>
     <div v-else>
       <div v-if="!editingDescription">
@@ -202,8 +208,16 @@ export default {
       return 'Deck is saved!'
     },
     invalidDeck () {
-      return this.$store.getters['builder/totalDice'] !== 10 || this.$store.getters['builder/totalCards'] !== 30 || this.$store.state.builder.isDirty || this.$store.state.builder.isSaving
+      if(this.$store.getters['builder/totalDice'] !== 10) return true;
+      if(this.$store.getters['builder/totalCards'] !== 30) return true;
+      if(this.$store.state.builder.isDirty) return true;
+      if(this.$store.state.builder.isSaving) return true;
+      return false;
     },
+    cantPublish() {
+      if(this.deck.is_unrestricted) return false;
+      if(this.invalidDeck) return true;
+    }
   },
   methods: {
     choosePhoenixborn () {
@@ -212,6 +226,9 @@ export default {
         query: { types: ['phoenixborn'] },
       })
       this.paneOpen = false
+    },
+    chooseUnrestricted() {
+      this.$store.dispatch('builder/setUnrestricted', true)
     },
     saveDeck (forceSave = false) {
       if (this.noPhoenixborn || this.isSaving) return

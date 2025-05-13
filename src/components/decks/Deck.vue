@@ -44,7 +44,7 @@
       <div v-if="showCards">
         <hr class="mb-1 mt-2" />
         <div class="mb-1">
-          <span class="text-lg">
+          <span v-if="!showUnrestricted" class="text-lg">
             <card-link :card="deckData.phoenixborn"></card-link>
           </span>
           <span class="text-sm float-right font-bold" :class="{'text-red': cardsCount !== 30, 'text-gray': cardsCount === 30}">
@@ -117,6 +117,9 @@ export default {
         params: { id: this.deckData.is_snapshot && !this.useDirectLinks ? this.deckData.source_id : this.deckData.id },
       }
     },
+    showUnrestricted() {
+      return !!this.$route.meta.showUnrestricted
+    },
     lastUpdatedDateFormatted () {
       return formatDistanceToNowStrict(parseISO(this.deckData.modified))
     },
@@ -126,6 +129,7 @@ export default {
       }, 0)
     },
     phoenixbornImagePath () {
+      if(!!this.$route.meta.showUnrestricted) return null;
       return getPhoenixbornImageUrl(this.deckData.phoenixborn.stub, false, this.deckData.is_legacy)
     },
     title () {
