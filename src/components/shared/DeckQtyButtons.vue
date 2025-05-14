@@ -31,7 +31,7 @@
         {{ deckCount }}
       </span>
   </div>
-  <div v-else-if="isDeckbuilderActive && isNotConjuration && !card.is_legacy">
+  <div v-else-if="isDeckbuilderActive && isNotConjuration && isNotReference && !card.is_legacy">
     <div v-if="isPhoenixborn"
       :class="{
         shadow: isPopup,
@@ -115,6 +115,9 @@ export default {
     },
     isNotConjuration () {
       return this.card.type !== 'Conjuration' && this.card.type !== 'Conjured Alteration Spell'
+    },
+    isNotReference() {
+      return this.card.type !== 'Reference'
     },
     deckPhoenixborn () {
       return this.$store.state.builder.deck.phoenixborn

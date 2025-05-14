@@ -60,6 +60,7 @@ export default {
         ['Alteration Spell', 'alteration_spell'],
         ['Ready Spell', 'ready_spell'],
         ['Phoenixborn', 'phoenixborn'],
+        ['Reference', 'reference']
       ]
       // Only allow filtering by conjurations if we aren't in deckbuilder mode
       if (!this.$store.state.builder.enabled || !this.$store.state.options.deckbuilderMode) {

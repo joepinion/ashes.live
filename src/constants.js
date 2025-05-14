@@ -9,4 +9,5 @@ export const typeToFontAwesome = {
   'Conjuration': 'fas fa-recycle',
   'Conjured Alteration Spell': 'fas fa-recycle',
   'Phoenixborn': 'fas fa-shield-alt',
+  'Reference': 'fas fa-info-circle',
 }
