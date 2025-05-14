@@ -5,11 +5,13 @@
 
       <p>As Ashes Reborn ascends to the next phase, we're making it the most player-friendly card game on the planet. This website lets you build and purchase any deck to be printed and shipped, or downloaded for print-and-play.</p>
 
+      <p><strong>2025-05-14: </strong> You can now buy up to 100 cards of any type for $39.95 - no deck restrictions, and dice reference cards are even available to add. To make an unrestricted deck, choose that option instead of a Phoenixborn when creating a new deck.</p>
+
       <h2>Purchasing Decks</h2>
       <ul class="list-disc pl-6 mb-4">
-        <li>Decks must be <strong>complete and legal</strong> to be purchased.</li>
-        <li>Printed and shipped decks are <strong>$19.95</strong> for up to 52 cards, or $24.95 for 53-70 cards (plus shipping).</li>
-        <li>Dice reference cards are <strong>automatically included</strong> if they fit within the card count.</li>
+        <li>Decks that are complete and legal can be purchased, or an unrestricted list of 100 cards.</li>
+        <li>Printed and shipped decks are <strong>$19.95</strong> for up to 52-card legal decks, $24.95 for up to 70-card decks, or $39.95 for unrestricted (not legal) decks (plus shipping).</li>
+        <li>For legal decks, dice reference cards are <strong>automatically included</strong> if they fit within the card count.</li>
         <li><strong>Dice</strong> can be added to your cart in sets of 5.</li>
         <li>Print-and-play <strong>PDF purchases are on the way soon.</strong> In the meantime, we've got 6 pre-constructed decks you can download for free.</li>
         <li>Purchases are completed at the website of our partner, <strong>ForgeFire</strong>.</li>
