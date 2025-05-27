@@ -1,11 +1,11 @@
 <template>
   <div>
-    <h2 class="text-lg mb-2 font-bold">
+    <h2 class="text-lg mb-2 font-bold" v-if="!isUnrestricted">
       <i :class="typeClass('Phoenixborn')"></i>
       {{ phoenixborn.name }}
     </h2>
     <div class="mb-4 text-sm">
-      <div v-if="phoenixbornCard" class="text-center -mb-2.5">
+      <div v-if="phoenixbornCard && !isUnrestricted" class="text-center -mb-2.5">
         <span
           class="inline-block border border-red-light px-1 bg-white">Battlefield <strong>{{ phoenixbornCard.battlefield }}</strong></span>
         <span
@@ -15,7 +15,7 @@
       </div>
       <!-- Setting a key ensures that this updates when the Phoenixborn card updates (not reactive otherwise, thanks to our setup-based compilation) -->
       <card-codes
-        v-if="phoenixbornCard"
+        v-if="phoenixbornCard && !isUnrestricted"
         class="border-gray border rounded px-2 py-1 pt-4 m-0"
         :content="phoenixbornCard.text"
         :key="phoenixbornCard.stub"
@@ -109,6 +109,9 @@ export default {
         this.$store.dispatch('cards/fetchCard', this.phoenixborn)
       }
       return this.$store.state.cards.stubMap[this.phoenixborn.stub]
+    },
+    isUnrestricted() {
+      return this.$store.state.builder.deck.is_unrestricted
     },
     diceList () {
       let diceArray = new Array(10)

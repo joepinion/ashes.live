@@ -189,7 +189,7 @@ export default {
       },
     },
     placeholderTitle () {
-      if (this.deck.phoenixborn) return `Untitled ${this.deck.phoenixborn.name}`
+      if (this.deck.phoenixborn) return `Untitled deck`
       return `Untitled Deck`
     },
     noPhoenixborn () {

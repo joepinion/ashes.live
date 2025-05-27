@@ -5,7 +5,7 @@
 
       <p>As Ashes Reborn ascends to the next phase, we're making it the most player-friendly card game on the planet. This website lets you build and purchase any deck to be printed and shipped, or downloaded for print-and-play.</p>
 
-      <p><strong>2025-05-14: </strong> You can now buy up to 100 cards of any type for $39.95 - no deck restrictions, and dice reference cards are even available to add. To make an unrestricted deck, choose that option instead of a Phoenixborn when creating a new deck.</p>
+      <p><strong>2025-05-14: </strong> You can now buy up to 100 cards of any type for $39.95 - no deck restrictions, and dice reference cards are even available to add. To make an unrestricted deck, choose that option instead of a Phoenixborn when creating a new deck. These decks are listed as a third category called "Unrestricted" rather than "Competitive" or "Red Rains" in deck lists.</p>
 
       <h2>Purchasing Decks</h2>
       <ul class="list-disc pl-6 mb-4">
@@ -30,13 +30,13 @@
 
       <p>Professionally printed decks can be bought TODAY, while print-and-play purchases aren't quite ready yet. But we are offering 6 free Ashes Reborn print-and-play PDF decks you can download and print for free!</p>
       <ul class="list-disc pl-6">
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Mist_Guardian.pdf" target="_blank" rel="noopener noreferrer">The Mist Guardian</a></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Iron_Men.pdf" target="_blank" rel="noopener noreferrer">The Men of Iron</a></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Bloodwoods_Queen.pdf" target="_blank" rel="noopener noreferrer">The Bloodwoods Queen</a></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Snakes_in_Silver.pdf" target="_blank" rel="noopener noreferrer">The Snakes in Silver</a></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Shadows_of_Viros.pdf" target="_blank" rel="noopener noreferrer">The Shadows of Viros</a></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Cloudsea_Siren.pdf" target="_blank" rel="noopener noreferrer">The Cloudsea Siren</a></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-Dice-Reference-Cards.pdf" target="_blank" rel="noopener noreferrer">Dice Reference Cards</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Mist_Guardian.pdf" target="_blank" rel="noopener noreferrer">The Mist Guardian (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Mist_Guardian.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Iron_Men.pdf" target="_blank" rel="noopener noreferrer">The Men of Iron (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Iron_Men.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Bloodwoods_Queen.pdf" target="_blank" rel="noopener noreferrer">The Bloodwoods Queen (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Bloodwoods_Queen.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Snakes_in_Silver.pdf" target="_blank" rel="noopener noreferrer">The Snakes in Silver (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Snakes_in_Silver.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Shadows_of_Viros.pdf" target="_blank" rel="noopener noreferrer">The Shadows of Viros (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Shadows_of_Viros.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Cloudsea_Siren.pdf" target="_blank" rel="noopener noreferrer">The Cloudsea Siren (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Cloudsea_Siren.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
+        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-Dice-Reference-Cards.pdf" target="_blank" rel="noopener noreferrer">Dice Reference Cards (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-Dice-Reference-Cards.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
         <li>Ashes 1.0 Upgrade Kit - temporarily unavailable until files are up to date. But currently <a href="https://www.plaidhatgames.com/product/ashes-reborn-15-upgrade-kit/">available on our web store.</a></li>
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/errata.pdf">Ashes Reborn Errata Print and Play Cards</a></li>
       </ul>
