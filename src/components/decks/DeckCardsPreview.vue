@@ -5,7 +5,7 @@
       :cards="section.contents"
       class="mb-4"
       :typeLabel="section.title" />
-    <deck-cards-type-list :cards="this.deck.conjurations" class="mb-4" typeLabel="Conjurations" />
+    <deck-cards-type-list v-if="!deck.is_unrestricted" :cards="this.deck.conjurations" class="mb-4" typeLabel="Conjurations" />
   </div>
 </template>
 

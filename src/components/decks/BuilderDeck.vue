@@ -59,7 +59,7 @@
         </li>
       </ul>
     </div>
-    <div v-if="conjurations && conjurations.length">
+    <div v-if="conjurations && conjurations.length && !isUnrestricted">
       <hr class="mt-6 mb-4">
       <h4><i :class="typeClass('Conjuration')"></i> Conjurations <span class="text-gray">({{ totalConjurations }})</span></h4>
       <ul>
