@@ -129,7 +129,7 @@ export default {
           if(!include_card) continue;
           if(this.deck.is_unrestricted) {
             if(one_product.attributes.unrestricted===true) {
-              if(cards.length<one_product.attributes.max) {
+              if(cards.length<=one_product.attributes.max) {
                 one_product.text = "Print on Demand";
                 one_product.subtitle = "Unrestricted card list";
                 one_product.attributes.cards = cards;

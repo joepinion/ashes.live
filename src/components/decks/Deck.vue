@@ -48,7 +48,7 @@
             <card-link :card="deckData.phoenixborn"></card-link>
           </span>
           <span class="text-sm float-right font-bold" :class="{'text-red': cardsCount !== 30, 'text-gray': cardsCount === 30}">
-            {{ cardsCount }} / 30
+            {{ cardsCount }} / {{ deckData.is_unrestricted ? '100' : '30' }}
           </span>
         </div>
         <deck-cards-preview :deck="deckData" />
