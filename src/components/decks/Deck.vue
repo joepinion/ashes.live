@@ -37,7 +37,7 @@
           </span>
         </span>
         <span class="text-sm float-right text-gray-darker">
-          Last updated: {{ lastUpdatedDateFormatted }} ago
+          Last updated: <time :datetime="deck.modified" :title="format(parsedDate, 'yyyy-MM-dd kk:mm OOO')">{{ formatDistanceToNowStrict(parsedDate) }} ago</time>
         </span>
       </div>
 
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { parseISO, formatDistanceToNowStrict } from 'date-fns'
+import { parseISO, format, formatDistanceToNowStrict } from 'date-fns'
 import { getPhoenixbornImageUrl } from '/src/utils/index.js'
 import { deckTitle } from '/src/utils/decks.js'
 import DeckCardsPreview from './DeckCardsPreview.vue'
@@ -123,6 +123,9 @@ export default {
     lastUpdatedDateFormatted () {
       return formatDistanceToNowStrict(parseISO(this.deckData.modified))
     },
+    parsedDate () {
+      return parseISO(this.deckData.modified)
+    },
     cardsCount () {
       return this.deckData.cards.reduce((prev, card) => {
         return prev + card.count
@@ -135,6 +138,10 @@ export default {
     title () {
       return deckTitle(this.deckData)
     },
+  },
+  methods: {
+    format,
+    formatDistanceToNowStrict,
   },
   watch: {
     isCurrentlyEditing (value, oldValue) {

@@ -33,6 +33,7 @@
               <span v-if="card.phoenixborn" class="text-gray" :title="card.phoenixborn">
                 ({{ card.phoenixborn.split(/,?[ ]/)[0] }})
               </span>
+              <card-chain-flag v-if="card.chained" />
               <span v-if="card.release.is_phg === false" class="text-gray pl-1">†</span>
             </h3>
 
@@ -124,6 +125,7 @@
             <card-related-cards v-if="relatedSummons" :card="card" :summons="relatedSummons" :conjurations="relatedConjurations" :show-legacy="showLegacy"></card-related-cards>
             <card-related-cards v-if="phoenixborn" :card="card" :summons="phoenixborn" :conjurations="phoenixbornConjurations" :show-legacy="showLegacy"></card-related-cards>
             <card-related-cards v-if="phoenixbornUnique" :card="card" :summons="phoenixbornUnique" :conjurations="phoenixbornUniqueConjurations" :show-legacy="showLegacy"></card-related-cards>
+            <card-related-cards v-if="phoenixbornUnique2" :card="card" :summons="phoenixbornUnique2" :conjurations="phoenixbornUnique2Conjurations" :show-legacy="showLegacy"></card-related-cards>
           </ul>
         </div>
         <card-usage :stub="stub"></card-usage>
@@ -136,6 +138,7 @@
 import { request } from '/src/utils/index.js'
 import { capitalize } from '/src/utils/text.js'
 import useHandleResponseError from '/src/composition/useHandleResponseError.js'
+import CardChainFlag from '../shared/CardChainFlag.vue'
 import CardCodes from '../shared/CardCodes.vue'
 import CardCosts from '../shared/CardCosts.vue'
 import Comments from '../shared/Comments.vue'
@@ -152,6 +155,7 @@ export default {
     return useHandleResponseError()
   },
   components: {
+    CardChainFlag,
     CardCodes,
     CardCosts,
     Comments,
@@ -172,6 +176,8 @@ export default {
     phoenixbornConjurations: null,
     phoenixbornUnique: null,
     phoenixbornUniqueConjurations: null,
+    phoenixbornUnique2: null,
+    phoenixbornUnique2Conjurations: null,
     error: false,
   }),
   beforeMount () {
@@ -186,6 +192,8 @@ export default {
         this.phoenixbornConjurations = response.data.related_cards.phoenixborn_conjurations
         this.phoenixbornUnique = response.data.related_cards.phoenixborn_unique
         this.phoenixbornUniqueConjurations = response.data.related_cards.phoenixborn_unique_conjurations
+        this.phoenixbornUnique2 = response.data.related_cards.phoenixborn_unique_2
+        this.phoenixbornUnique2Conjurations = response.data.related_cards.phoenixborn_unique_2_conjurations
       } else if (response.data.related_cards.summoning_cards !== undefined) {
         this.relatedSummons = response.data.related_cards.summoning_cards
         this.relatedConjurations = response.data.related_cards.conjurations
