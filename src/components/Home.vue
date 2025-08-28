@@ -5,7 +5,8 @@
 
       <p>As Ashes Reborn ascends to the next phase, we're making it the most player-friendly card game on the planet. This website lets you build and purchase any deck to be printed and shipped, or downloaded for print-and-play.</p>
 
-      <p><strong>2025-05-14: </strong> You can now buy up to 100 cards of any type for $39.95 - no deck restrictions, and dice reference cards are even available to add. To make an unrestricted deck, choose that option instead of a Phoenixborn when creating a new deck. These decks are listed as a third category called "Unrestricted" rather than "Competitive" or "Red Rains" in deck lists.</p>
+      <p><strong>2025-08-28: </strong> Chimera decks are now available to print on demand. <router-link to="/decks/enemy">
+          Click here to buy Chimera decks.</router-link> Please note, the products provide the Chimera cards only, no player cards and no Chimera board/dice/tokens.</p>
 
       <h2>Purchasing Decks</h2>
       <ul class="list-disc pl-6 mb-4">
@@ -26,6 +27,14 @@
     <div class="sm:w-1/3 bg-[#e6e6e6] box-border p-4 border-l-solid border-l-[2px] border-l-white border-r-solid border-r-[2px] border-r-white relative -mt-4">
       <h2>Discord</h2>
       <p><a target="_blank" rel="noopener noreferrer" href="https://discord.gg/UU5bduq">Join the Ashes Reborn Discord community</a></p>
+
+      <h2>Chimera Decks</h2>
+      <p>
+        <router-link to="/decks/enemy">
+          Click here to buy Chimera decks.
+        </router-link>
+      </p>
+
       <h2>6 Free Print-and-Play Decks</h2>
 
       <p>Professionally printed decks can be bought TODAY, while print-and-play purchases aren't quite ready yet. But we are offering 6 free Ashes Reborn print-and-play PDF decks you can download and print for free!</p>

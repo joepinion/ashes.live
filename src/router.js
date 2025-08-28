@@ -18,6 +18,7 @@ import RequestReset from './components/players/RequestReset.vue'
 import ResetPassword from './components/players/ResetPassword.vue'
 import ContentPolicies from './components/ContentPolicies.vue'
 import ProjectPhoenix from './components/ProjectPhoenix.vue'
+import EnemyDecks from './components/EnemyDecks.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -237,6 +238,12 @@ const router = createRouter({
       name: 'ContentPolicies',
       component: ContentPolicies,
       meta: { title: 'Content Policies' },
+    },
+    {
+      path: '/decks/enemy/',
+      name: 'EnemyDecks',
+      component: EnemyDecks,
+      meta: { title: 'Enemy Decks' },
     },
     {
       path: '/:pathMatch(.*)*',
