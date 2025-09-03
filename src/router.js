@@ -19,6 +19,7 @@ import ResetPassword from './components/players/ResetPassword.vue'
 import ContentPolicies from './components/ContentPolicies.vue'
 import ProjectPhoenix from './components/ProjectPhoenix.vue'
 import EnemyDecks from './components/EnemyDecks.vue'
+import PlayerDeckImport from './components/players/PlayerDeckImport.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -198,6 +199,15 @@ const router = createRouter({
       component: PlayerAccount,
       meta: {
         title: 'My Account',
+        needsAuth: true,
+      },
+    },
+    {
+      path: '/players/me/import/:token/',
+      name: 'ImportDecks',
+      component: PlayerDeckImport ,
+      meta: {
+        title: 'Import from Ashes.live',
         needsAuth: true,
       },
     },
