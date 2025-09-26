@@ -15,7 +15,13 @@
       <div v-else-if="importComplete" class="py-8">
         <div class="mb-4">
           <h2 class="text-xl font-bold text-green-600 mb-2">
-            {{ importProgress.successCount }} deck{{ importProgress.successCount === 1 ? '' : 's' }} imported successfully!
+            <span v-if="importProgress.successCount===0">
+              No decks were imported.
+            </span>
+            <span v-else>
+              {{ importProgress.successCount }} deck{{ importProgress.successCount === 1 ? '' : 's' }} imported successfully!
+            </span>
+
           </h2>
           <div v-if="importProgress.errors.length > 0" class="mt-4">
             <p class="text-red-600 font-semibold">Errors encountered:</p>
@@ -116,10 +122,22 @@ export default {
         let hasMore = true
 
         while (hasMore) {
-          // Build URL with optional from_date parameter
+          // Build URL with optional parameters
           let url = `/v2/decks/import/${token}`
+          const params = new URLSearchParams()
+
           if (fromDate) {
-            url += `?from_date=${encodeURIComponent(fromDate)}`
+            params.append('from_date', fromDate)
+          }
+
+          // Check for deck_share_uuid query parameter
+          const deckShareUuid = route.query.deck_share_uuid
+          if (deckShareUuid) {
+            params.append('deck_share_uuid', deckShareUuid)
+          }
+
+          if (params.toString()) {
+            url += `?${params.toString()}`
           }
 
           const response = await request(url, {
@@ -129,7 +147,7 @@ export default {
           console.log('Import response:', response)
 
           // Update progress
-          importProgress.value.totalCount += response.data.total_count
+          importProgress.value.totalCount = response.data.total_count
           importProgress.value.successCount += response.data.success_count
           importProgress.value.errors.push(...response.data.errors)
 
