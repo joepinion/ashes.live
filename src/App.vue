@@ -77,10 +77,10 @@
           </transition>
         </div>
       </div>
-      <a v-if="$route.path==='/'" href="https://www.kickstarter.com/projects/plaidhatgames/ashes-ascendancy" class="w-full overflow-hidden flex box-border justify-center border-b-solid border-b-[2px] border-b-[#aaaaaa]">
+      <a v-if="$route.path==='/'" href="https://www.plaidhatgames.com/store/#Ashes%20Reborn" class="w-full overflow-hidden flex box-border justify-center border-b-solid border-b-[2px] border-b-[#aaaaaa]">
         <img
-          :src="getCDNURL('/images/banners/ks.jpg')"
-          alt="Ashes Ascendency. Now on Kickstarter"
+          :src="getCDNURL('/images/banners/nextera.jpg')"
+          alt="Ashes Ascendency."
           class="w-[110%] h-auto max-w-[1920px] flex-shrink-0 lg:w-full"
         />
       </a>
