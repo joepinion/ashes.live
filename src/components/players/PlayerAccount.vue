@@ -37,9 +37,17 @@
           :disabled="isSubmitting"></text-editor>
 
 
-        <h2>Site Settings</h2>
+        <h2>Site Settings <span class="text-gray-dark">(specific to this browser)</span></h2>
 
         <div class="mb-8">
+          <label><input type="checkbox" v-model="showCardReleases" :disabled="isSubmitting"> Display card's release above its text</label>
+          <div class="text-sm text-gray-darker">
+            When hovering over a card or using binder view, release information will be shown for every card.
+          </div>
+        </div>
+
+        <!-- Enable again once we actually support colorized icons; it doesn't currently do anything -->
+        <div v-if="false" class="mb-8">
           <label><input type="checkbox" v-model="colorizeIcons" :disabled="isSubmitting"> Use colored cost icons</label>
           <div class="text-sm text-gray-darker">
             Colored cost icons are easier to distinguish at a glance, but more visually intrusive.
@@ -76,6 +84,7 @@ export default {
     newsletterOptIn: false,
     emailSubscriptions: false,
     excludeSubscriptions: false,
+    showCardReleases: false,
     colorizeIcons: false,
     isSubmitting: false,
   }),
@@ -87,6 +96,7 @@ export default {
       this.emailSubscriptions = user.email_subscriptions
       this.excludeSubscriptions = user.exclude_subscriptions
       this.colorizeIcons = user.colorize_icons
+      this.showCardReleases = this.$store.state.options.showCardReleases
     }).catch(() => {
       this.toast.error('Unable to load account settings; please report this!')
       this.$router.go(-1)
@@ -100,6 +110,7 @@ export default {
   methods: {
     submitAccountSettings () {
       this.isSubmitting = true
+      this.$store.commit('options/setShowCardReleases', this.showCardReleases)
       this.$store.dispatch('player/saveProfile', {
         username: this.username,
         description: this.description,

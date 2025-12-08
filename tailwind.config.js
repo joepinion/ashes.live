@@ -30,7 +30,11 @@ module.exports = {
         light: 'var(--color-red-light)',
         lightest: 'var(--color-red-lightest)',
       },
-      orange: 'var(--color-orange)',
+      orange: {
+        DEFAULT: 'var(--color-orange)',
+        light: 'var(--color-orange-light)',
+        lightest: 'var(--color-orange-lightest)',
+      },
       green: {
         DEFAULT: 'var(--color-green)',
         light: 'var(--color-green-light)',
@@ -60,6 +64,10 @@ module.exports = {
         'sympathy-bg': 'var(--color-dice-sympathy-bg)',
         time: 'var(--color-dice-time)',
         'time-bg': 'var(--color-dice-time-bg)',
+        artifice: 'var(--color-dice-artifice)',
+        'artifice-bg': 'var(--color-dice-artifice-bg)',
+        astral: 'var(--color-dice-astral)',
+        'astral-bg': 'var(--color-dice-astral-bg)',
       },
     },
     listStyleType: {

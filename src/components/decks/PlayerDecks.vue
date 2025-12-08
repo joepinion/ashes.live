@@ -38,12 +38,17 @@
 </template>
 
 <script>
+import useHandleResponseError from '/src/composition/useHandleResponseError.js'
 import DeckListing from './DeckListing.vue'
 
 export default {
   name: 'PlayerDecks',
   components: {
     DeckListing,
+  },
+  setup () {
+    // Standard composite containing { toast, handleResponseError }
+    return useHandleResponseError()
   },
   computed: {
     showLegacy () {
@@ -54,6 +59,17 @@ export default {
     },
     showUnrestricted () {
       return !!this.$route.meta.showUnrestricted
+    },
+  },
+  methods: {
+    exportAllDecks () {
+      console.log("attempting to trigger store method...")
+      this.$store.dispatch('player/loadExportToken').then(exportToken => {
+        console.log("attempting to open window...")
+        window.open(`https://ashesdb.plaidhatgames.com/players/me/import/${exportToken}`)
+      }).catch(() => {
+        this.toast.error('Unable to load export token; please report this!')
+      })
     },
   },
 }

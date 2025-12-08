@@ -5,8 +5,9 @@
 
       <p>As Ashes Reborn ascends to the next phase, we're making it the most player-friendly card game on the planet. This website lets you build and purchase any deck to be printed and shipped, or downloaded for print-and-play.</p>
 
-      <p><strong>2025-08-28: </strong> Chimera decks are now available to print on demand. <router-link to="/decks/enemy">
-          Click here to buy Chimera decks.</router-link> Please note, the products provide the Chimera cards only, no player cards and no Chimera board/dice/tokens.</p>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/jjPcPNQTZt0?si=iEQtxjM_geZuzPIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+      <p><strong>2025-12-05: </strong> End of Argaia and Ascendancy Starter Set cards added!</p>
 
       <h2>Purchasing Decks</h2>
       <ul class="list-disc pl-6 mb-4">
@@ -61,10 +62,16 @@
             <a class="die ceremonial phg-ceremonial-power py-1 px-2" :href="getCDNURL('/images/cards/ceremonial-magic.jpg')" target="_blank"><span class="alt-text">Ceremonial Magic</span></a>
             <a class="die charm phg-charm-power py-1 px-2" :href="getCDNURL('/images/cards/charm-magic.jpg')" target="_blank"><span class="alt-text">Charm Magic</span></a>
             <a class="die illusion phg-illusion-power py-1 px-2" :href="getCDNURL('/images/cards/illusion-magic.jpg')" target="_blank"><span class="alt-text">Illusion Magic</span></a>
+          </div>
+          <div class="text-2xl mt-3">
             <a class="die natural phg-natural-power py-1 px-2" :href="getCDNURL('/images/cards/natural-magic.jpg')" target="_blank"><span class="alt-text">Natural Magic</span></a>
             <a class="die divine phg-divine-power py-1 px-2" :href="getCDNURL('/images/cards/divine-magic.jpg')" target="_blank"><span class="alt-text">Divine Magic</span></a>
             <a class="die sympathy phg-sympathy-power py-1 px-2" :href="getCDNURL('/images/cards/sympathy-magic.jpg')" target="_blank"><span class="alt-text">Sympathy Magic</span></a>
+          </div>
+          <div class="text-2xl mt-3">
             <a class="die time phg-time-power py-1 px-2" :href="getCDNURL('/images/cards/time-magic.jpg')" target="_blank"><span class="alt-text">Time Magic</span></a>
+            <a class="die artifice phg-artifice-power py-1 px-2" :href="getCDNURL('/images/cards/artifice-magic.jpg')" target="_blank"><span class="alt-text">Time Magic</span></a>
+            <a class="die astral phg-astral-power py-1 px-2" :href="getCDNURL('/images/cards/astral-magic.jpg')" target="_blank"><span class="alt-text">Time Magic</span></a>
           </div>
         </li>
       </ul>
