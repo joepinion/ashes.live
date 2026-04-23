@@ -5,6 +5,7 @@
       <div class="sm:mx-auto flex flex-col items-center text-[#aaaaaa]">
         <h2 class="font-bold">Purchase This Deck</h2>
         <p class="text-[#aaaaaa] text-xs text-center italic mt-0 mb-3">Adding products to your cart will send you to our partner, ForgeFire, to complete the purchase.</p>
+        <p class="text-[#aaaaaa] text-xs text-center italic mt-0 mb-3">Print on demand cards can vary slightly from cards sold at retail. Small variations in texture, color, and size are normal. All POD cards are tournament legal but require sleeving to ensure no variations can be detected.</p>
         <h3 class="text-xl">Cards</h3>
         <div class="mb-4" v-if="!this.hasDeckProduct">There are no card products available for this deck. It may be too large.</div>
         <div class="one-product flex items-start justify-center mb-2" v-for="product in this.productList(true, false)">
@@ -14,7 +15,7 @@
             <div class="font-normal text-sm italic">{{ product.subtitle}}</div>
             <button @click="addProductToCart(product)" class="fancy-button mb-4 font-normal" :disabled="!product.available">
               <span v-if="product.available" class="text-[#1398c3]">${{ product.price }} - Add to Cart <i class="fas fa-cart-plus"></i></span>
-              <span v-else  class="text-[#8c8c8c]">Coming Soon!</span>
+              <span v-else  class="text-[#8c8c8c]">Not Currently Available</span>
             </button>
           </div>
         </div>

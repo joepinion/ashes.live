@@ -23,7 +23,7 @@
               </router-link>
             </li>
             <li class="pl-2 pr-4 md:py-2">
-              <a href="https://www.plaidhatgames.com/board-games/ashes-rise-phoenixborn/" class="flex flex-row items-center text-[#8c8c8c]">
+              <a href="https://www.plaidhatgames.com/board-games/ashes-ascendancy-card-game/" class="flex flex-row items-center text-[#8c8c8c]">
                 <i
                 class="phg-basic-magic phg-standalone text-md pr-px inline-block"></i>
                 <span clafss="pl-px">Ashes Main</span>

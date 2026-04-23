@@ -38,7 +38,7 @@
 
       <h2>6 Free Print-and-Play Decks</h2>
 
-      <p>Professionally printed decks can be bought TODAY, while print-and-play purchases aren't quite ready yet. But we are offering 6 free Ashes Reborn print-and-play PDF decks you can download and print for free!</p>
+      <p>We have six pre-constructed decks you can download and print for free!</p>
       <ul class="list-disc pl-6">
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Mist_Guardian.pdf" target="_blank" rel="noopener noreferrer">The Mist Guardian (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Mist_Guardian.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Iron_Men.pdf" target="_blank" rel="noopener noreferrer">The Men of Iron (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Iron_Men.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
@@ -53,10 +53,7 @@
       <h2 class="my-4">Resources</h2>
 
       <ul class="list-disc pl-4">
-        <li><a href="https://media.plaidhatgames.com/filer_public/23/15/23151a90-9295-4a82-87d0-970df6dc5f04/ashes_reborn_rulebook_final.pdf">Ashes Reborn Rules</a> <span class="text-gray">(PDF)</span></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/faq7.pdf">Ashes Reborn FAQ</a> <span class="text-gray">(PDF)</span></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/op7.pdf">Ashes Reborn Organized Play Rules</a> <span class="text-gray">(PDF)</span></li>
-        <li><a href="https://www.plaidhatgames.com/board-games/ashes-rise-phoenixborn/">...and more at PlaidHatGames.com</a></li>
+        <li><a href="https://www.plaidhatgames.com/board-games/ashes-ascendancy-card-game/">Rules, FAQ, organized play doc, and more at PlaidHatGames.com</a></li>
         <li>Dice reference cards:
           <div class="text-2xl mt-1">
             <a class="die ceremonial phg-ceremonial-power py-1 px-2" :href="getCDNURL('/images/cards/ceremonial-magic.jpg')" target="_blank"><span class="alt-text">Ceremonial Magic</span></a>
