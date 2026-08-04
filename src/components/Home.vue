@@ -47,8 +47,7 @@
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Shadows_of_Viros.pdf" target="_blank" rel="noopener noreferrer">The Shadows of Viros (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Shadows_of_Viros.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-The_Cloudsea_Siren.pdf" target="_blank" rel="noopener noreferrer">The Cloudsea Siren (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-The_Cloudsea_Siren.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
         <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/Ashes-Home-Print-Dice-Reference-Cards.pdf" target="_blank" rel="noopener noreferrer">Dice Reference Cards (Letter)</a> <a href="https://ashesdb-media.plaidhatgames.com/pdf/A4-Ashes-Home-Print-Dice-Reference-Cards.pdf" target="_blank" rel="noopener noreferrer">(A4)</a></li>
-        <li>Ashes 1.0 Upgrade Kit - temporarily unavailable until files are up to date. But currently <a href="https://www.plaidhatgames.com/product/ashes-reborn-15-upgrade-kit/">available on our web store.</a></li>
-        <li><a href="https://ashesdb-media.plaidhatgames.com/pdf/errata.pdf">Ashes Reborn Errata Print and Play Cards</a></li>
+        <li>Ashes 1.0 Upgrade Kit - unavailable until files are up to date.</li>
       </ul>
       <h2 class="my-4">Resources</h2>
 
